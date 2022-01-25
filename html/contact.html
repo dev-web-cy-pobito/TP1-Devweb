@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <title>Contact</title>
+    </head>
+
+    <body>
+
+        <div class="contact-form">
+            <form action="javascript:submit();">
+                <div class="inline">
+                    <label>Votre nom</label>
+                    <input name="nom" type="text">
+                </div>
+                <div class="inline">
+                    <label>Votre prénom</label>
+                    <input name="prenom" type="text">
+                </div>
+                <label>Votre adresse mail</label>
+                <input name="mail" type="email">
+                <label>Votre statut</label>
+
+                <div class="inline">
+                    <input type="radio" name="statut" value="A" checked>
+                    <label>A</label>
+                </div>
+
+                <div class="inline">
+                    <input type="radio" name="statut" value="B">
+                    <label>B</label>
+                </div>
+
+
+                <label>Date de naissance</label>
+                <input type="date">
+                
+                <label>Sujet</label>
+                <input name="sujet">
+                <label>Message</label>
+                <textarea name="message"></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+
+
+    </body>
+
+</html>

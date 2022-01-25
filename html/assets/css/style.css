@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #0D1117;
+    color: #c9d1d9;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+}
+
+p {
+    margin: 0;
+}
+
+.dark-bg {
+    background-color: #161B22;
+    border-color: #444c56; 
+}
+
+.box-title {
+    margin: 0;
+    padding: 10px;
+    padding-left: 10px;
+    background-color: #161B22;
+}
+
+.boxed {
+    margin: 4px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 6px;
+    border-color: #30363d;
+}
+
+div.content {
+    padding-top: 0px;
+    padding: 20px;
+}
+
+.floating-container {
+    margin-left: 30px;
+}
+
+#vertical-center {
+    display: flex;
+    padding-left: 5px;
+    padding-right: 5px; 
+}
+
+.column-left {
+    flex: 20%;
+}
+
+.column-right {
+    flex: 80%;
+}
+
+.inline {
+    display: inline-block;
+}
+
+#header{
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+div .title{
+    text-align: left;
+    font-size: 69;
+    width: 100%;
+}
+
+.logo {
+    margin: 10px;
+    max-width: 75px;
+    max-height: 75px;
+}
+
+form {
+    margin: 0;
+    padding: 0;
+}
+
+div.contact-form form label {
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+div.contact-form form input, textarea {
+    width: 100%;
+    display: block;
+}
+
+div.contact-form div {
+    width: 39.6%;
+    /* ça pue */
+    margin: 0;
+    padding: 0;
+}
+
+div.contact-form div:nth-child(2n) {
+    margin-left: 10%;
+}
+
+div.contact-form div:nth-child(2n+1) {
+    margin-right: 10%;
+}
