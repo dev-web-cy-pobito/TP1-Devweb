@@ -82,28 +82,60 @@ form {
     padding: 0;
 }
 
+.contact-form {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
 div.contact-form form label {
     width: 100%;
     display: block;
-    text-align: center;
 }
 
-div.contact-form form input, textarea {
-    width: 100%;
+div.contact-form form input, div.contact-form form label, textarea {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 1%;
     display: block;
 }
 
-div.contact-form div {
-    width: 39.6%;
-    /* ça pue */
+div.contact-form form div input, div.contact-form form div label {
+    width: 85%;
     margin: 0;
-    padding: 0;
+}
+
+div.contact-form div {
+    width: 32.75%;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 div.contact-form div:nth-child(2n) {
-    margin-left: 10%;
+    margin-left: 0;
+}
+
+div.contact-form div:nth-child(2n) input, div.contact-form div:nth-child(2n) label {
+    margin-left: 28.25%;
 }
 
 div.contact-form div:nth-child(2n+1) {
-    margin-right: 10%;
+    margin-right: 0;
+}
+
+div.inline.radio {
+    margin-left: 15% !important;
+    width: 100%;
+}
+
+.radio input, .radio label {
+    display: inline-block !important;
+    width: min-content !important;
+    margin: 0% !important;
+    margin-left: 5% !important;
+}
+
+div.contact-form button {
+    margin-left: 15%;
+    margin-top: 2%;
 }
