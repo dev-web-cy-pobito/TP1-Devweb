@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link rel="stylesheet" href="assets/css/style.css">
+        <script src="assets/js/metiers.js"></script>
         <title>Contact</title>
     </head>
 
@@ -31,11 +32,16 @@
                 <label>Votre statut</label>
 
                 <div class="inline radio">
-                    <input type="radio" name="statut" value="A" checked>
-                    <label>A</label>
-                    <input type="radio" name="statut" value="B">
-                    <label>B</label>
+                    <input type="radio" name="genre" value="M" checked>
+                    <label>M</label>
+                    <input type="radio" name="genre" value="F">
+                    <label>F</label>
                 </div>
+
+                <label>Votre statut</label>
+                <select id="metiers">
+                    <option value disabled selected>Chargement...</option>
+                </select>
                 
                 <label>Sujet</label>
                 <input name="sujet">

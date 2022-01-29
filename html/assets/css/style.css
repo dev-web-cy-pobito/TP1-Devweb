@@ -87,12 +87,12 @@ form {
     margin-right: 20%;
 }
 
-div.contact-form form label {
+div.contact-form form label, select{
     width: 100%;
     display: block;
 }
 
-div.contact-form form input, div.contact-form form label, textarea {
+div.contact-form form input, div.contact-form form label, textarea, select {
     width: 70%;
     margin-left: 15%;
     margin-right: 15%;
