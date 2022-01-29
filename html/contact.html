@@ -10,47 +10,95 @@
     </head>
 
     <body>
-
-        <div class="contact-form">
-            <form action="javascript:submit();">
-                <div class="inline">
-                    <label>Votre nom</label>
-                    <input name="nom" type="text">
-                </div>
-                <div class="inline">
-                    <label>Votre prénom</label>
-                    <input name="prenom" type="text">
-                </div>
-                <div class="inline">
-                    <label>Votre adresse mail</label>
-                    <input name="mail" type="email">
-                </div>
-                <div class="inline">
-                    <label>Date de naissance</label>
-                    <input type="date">
-                </div>
-                <label>Votre statut</label>
-
-                <div class="inline radio">
-                    <input type="radio" name="genre" value="M" checked>
-                    <label>M</label>
-                    <input type="radio" name="genre" value="F">
-                    <label>F</label>
-                </div>
-
-                <label>Votre statut</label>
-                <select id="metiers">
-                    <option value disabled selected>Chargement...</option>
-                </select>
-                
-                <label>Sujet</label>
-                <input name="sujet">
-                <label>Message</label>
-                <textarea name="message"></textarea>
-                <button type="submit">Envoyer</button>
-            </form>
+        <div id="header" class="dark-bg">
+            <img class="logo" src="assets/images/logo.png">
+            <div class="title">
+                <h1 class="title">Puffles</h1>
+            </div>
+            <nav class="h-menu">
+                <ul>
+                    <li><a href="/index.html">Accueil</a></li>
+                    <li> Puffles Commun</li>
+                    <li>Puffles </li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
 
+        <div id="vertical-center">
+            <div id="menu" class="column-left inline vl">
+                <h1 class="box-title">Menu</h1>
+                <nav class="v-menu">
+                    <ul>
+                        <li><a href="/index.html">Accueil</a></li>
+                        <li> Puffles Commun</li>
+                        <li>Puffles </li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div id="main" class="column-right inline floating-container">
+                <h1>Accueil</h1>
+                <div class="content">
+                    <form action="javascript:submit();">
+                        <div class="contact-form">
+                            <div class="col-half-left">
+                                <label></label>
+                                <input name="nom" placeholder="Votre nom" type="text">
+                            </div>
+                            <div class="col-half-right">
+                                <label></label>
+                                <input name="prenom" placeholder="Votre prénom" type="text">
+                            </div>
+                            <div class="col-full">
+                                <label></label>
+                                <input name="mail" placeholder="Votre adresse mail" type="email">
+                            </div>
+                            <div class="col-full">
+                                <label>Date de naissance</label><br>
+                                <input placeholder="jj/mm/aaaa" type="date">
+                            </div>
+                            <div class="col-full">
+                                <label>Genre</label><br>
+                                <div class="radio">
+                                    <div>
+                                        <input id="male" type="radio" name="genre" value="M" checked>
+                                        <label for="male">M</label>
+                                    </div>
+                                    <div>
+                                        <input id="female" type="radio" name="genre" value="F">
+                                        <label for="female">F</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-full">
+                                <label>Votre statut</label><br>
+                                <select id="metiers">
+                                    <option value disabled selected>Chargement...</option>
+                                </select>
+                            </div>
+                            <div class="col-full">
+                                <label></label>
+                                <input placeholder="Sujet" name="sujet">
+                            </div>
+                            <div class="col-full">
+                                <label></label>
+                                <textarea placeholder="Message" name="message"></textarea>
+                            </div>
+                            <div class="col-full">
+                                <button type="submit">Envoyer</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        <div id="footer" class="dark-bg">
+            <!-- <h3 class="footer">Puffle</h3> -->
+            <p class="footer">Copyright : Puffle&co ©</p>
+            <p class="footer">Webmasters : Fouiny & Obito1903</p>
+        </div>
 
     </body>
 
