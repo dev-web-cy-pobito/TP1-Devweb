@@ -160,6 +160,10 @@ form {
     margin-bottom: 20px;
 }
 
+.contact-form label {
+    margin-left: 5px;
+}
+
 .col-half-left {
     float: left;
     width: 45%;
@@ -171,6 +175,7 @@ form {
 }
 
 .col-full {
+    display: inline-block;
     width: 100%;
 }
 
@@ -187,6 +192,7 @@ form {
 } */
 
 .contact-form input, .contact-form input[type=date], .contact-form select, .contact-form textarea {
+    margin-top: 4px;
     padding: 10px;
     font-size: medium;
     color: inherit;
