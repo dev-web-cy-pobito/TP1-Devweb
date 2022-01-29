@@ -187,13 +187,19 @@ form {
 } */
 
 .contact-form input, .contact-form input[type=date], .contact-form select, .contact-form textarea {
-    padding: 5px;
+    padding: 10px;
+    font-size: medium;
     color: inherit;
     background-color: #010409;
     border: 1px solid #30363d;
     border-radius: 6px;
     width: 100%;
     box-sizing: border-box;
+
+}
+
+#picker {
+    background: #90969b;
 }
 
 ::placeholder {
