@@ -1,9 +1,34 @@
+:root {
+    --bg-input: #010409;
+    --bg-main: #0D1117;
+    --bg-secondary: #161B22;
+    --border-primary: #30363d;
+    --border-lighter: #444c56;
+    /* --border-darker: ; */
+    --text-darker: #afb5bb;
+    --text: #c9d1d9;
+    --text-lighter: #f0f6fc;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg-input: #f6f8fa;
+        --bg-main: #ffffff;
+        --bg-secondary: #f6f8fa;
+        --border-primary: #d0d7de;
+        --border-lighter: #d0d7de;
+        --text: #24292f;
+        --text-darker: #57606a;
+        --text-lighter: #24292f;
+    }
+}
+
 body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    background-color: #0D1117;
-    color: #c9d1d9;
+    background-color: var(--bg-main);
+    color: var(--text);
     font-family: Arial, Helvetica, sans-serif;
     min-height: 100vh;
     display: flex;
@@ -33,7 +58,7 @@ a:link, a:visited {
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
-    color: #f0f6fc;
+    color: var(--text-lighter);
 }
 
 #footer {
@@ -59,7 +84,7 @@ nav.h-menu>ul>li {
 }
 
 nav.h-menu>ul>li:hover {
-    color: #afb5bb
+    color: var(--text-darker)
 }
 
 nav.v-menu>ul {
@@ -73,7 +98,7 @@ nav.v-menu>ul>li {
 }
 
 nav.v-menu>ul>li:hover {
-    color: #f0f6fc;
+    color: var(--text-lighter);
 }
 
 p.footer {
@@ -81,16 +106,16 @@ p.footer {
 }
 
 .dark-bg {
-    background-color: #161B22;
-    border-color: #444c56;
+    background-color: var(--bg-secondary);
+    border-color: var(--border-primary);
 }
 
 .box-title {
     margin: 0;
     padding: 10px;
     padding-left: 10px;
-    color: #f0f6fc;
-    background-color: #161B22;
+    color: var(--text-lighter);
+    background-color: var(--bg-secondary);
 }
 
 .boxed {
@@ -98,11 +123,11 @@ p.footer {
     border-width: 1px;
     border-style: solid;
     border-radius: 6px;
-    border-color: #30363d;
+    border-color: var(--border-primary);
 }
 
 .vl {
-    border-right: 2px solid #30363d;
+    border-right: 2px solid var(--border-primary);
 }
 
 div.content {
@@ -139,7 +164,7 @@ div .title {
 }
 
 div.item-list tr {
-    border-bottom: 3px solid #30363d;
+    border-bottom: 3px solid var(--border-primary);
 }
 
 div.item-list img {
@@ -186,7 +211,7 @@ form {
     color: inherit;
     background-color: #161B22;
     border: none;
-    border-bottom: 2px solid #30363d;
+    border-bottom: 2px solid var(--border-darker);
     width: 100%;
     box-sizing: border-box;
 } */
@@ -196,8 +221,8 @@ form {
     padding: 10px;
     font-size: medium;
     color: inherit;
-    background-color: #010409;
-    border: 1px solid #30363d;
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-primary);
     border-radius: 6px;
     width: 100%;
     box-sizing: border-box;
@@ -215,10 +240,10 @@ form {
 .contact-form button[type=submit] {
     color: inherit;
     font-weight: bold;
-    border: 1px solid #444c56;
+    border: 1px solid var(--border-lighter);
     padding: 10px;
     border-radius: 4px;
-    background-color: #30363d;
+    background-color: var(--border-primary);
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -226,9 +251,9 @@ form {
 }
 
 .contact-form button[type=submit]:hover {
-    color: #f0f6fc;
+    color: var(--text-lighter);
     background-color: #47505a;
-    border-color: #afb5bb;
+    border-color: var(--border-primary);
 }
 
 .contact-form .radio {
