@@ -15,7 +15,6 @@ window.onload = () => {
                 });
                 e.innerHTML += `<optgroup label="${g.text}">${inj}</optgroup>`;
             });
-            console.log(inj)
         }
     }
 }
