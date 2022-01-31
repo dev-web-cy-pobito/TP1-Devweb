@@ -2,14 +2,7 @@
 
 Projet devweb 1
 
-## Dev-container
+# Not associated with Disney 
 
-PHP & MariaDB (MySQL compatible)
-
-Start code in the dev container
-
-to start the web server in the container :
-
-```sh
-php -S localhost:8080
-```
+> all Puffle Data is provided by the Club Penguin Fandom Wiki, which is also not affiliated with Disney. 
+> https://clubpenguin.fandom.com/wiki/Puffle
