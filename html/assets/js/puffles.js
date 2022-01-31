@@ -1,161 +1,161 @@
 const data = {
     categories: [],
     puffles : [{
-        "categories": ["Adoptable", "Original"],
+        "categories": ["Adoptable", "Original", "Membership-Free"],
         "pic_url": "assets/images/338Puffle_2014_Transformation_Player_Card_Blue.png",
         "name": "Blue",
         "description": "Considered trustworthy, loyal, and easy to care for. Their favorite toy is a ball.",
         "price": 400,
         "date": "November 2005"
     }, {
-        "categories": ["Adoptable", "Original"],
+        "categories": ["Adoptable", "Original", "Membership-Free"],
         "pic_url": "assets/images/882Puffle_2014_Transformation_Player_Card_Red.png",
         "name": "Red",
         "description": "The most adventurous, and native to Rockhopper Island. They like being like pirates, bowling, surfing, and eating stinky cheese.",
         "price": 400,
         "date": "June 9, 2005[1]"
     }, {
-        "categories": ["Adoptable", "Original"],
+        "categories": ["Adoptable", "Original", "Membership-Only"],
         "pic_url": "assets/images/449Puffle_2014_Transformation_Player_Card_Pink.png",
         "name": "Pink",
         "description": "Known for their athleticism, and depicted as cheerful. The best swimmers.",
         "price": 400,
         "date": "November 2005"
     }, {
-        "categories": ["Adoptable", "Original"],
+        "categories": ["Adoptable", "Original", "Membership-Only"],
         "pic_url": "assets/images/bb0Puffle_2014_Transformation_Player_Card_Green.png",
         "name": "Green",
         "description": "Very energetic and silly, much like clowns, and usually seen with a propeller cap or a unicycle.",
         "price": 400,
         "date": "November 2005"
     }, {
-        "categories": ["Adoptable", "Original"],
+        "categories": ["Adoptable", "Original", "Membership-Only"],
         "pic_url": "assets/images/33cPuffle_2014_Transformation_Player_Card_Black.png",
         "name": "Black",
         "description": "The strong and silent type, however, they have a wild side; they love to skateboard, and can fly as a fireball. They rarely smile, but they will smile when pleased.",
         "price": 400,
         "date": "November 2005"
     }, {
-        "categories": ["Adoptable", "Original"],
+        "categories": ["Adoptable", "Original", "Membership-Only"],
         "pic_url": "assets/images/ee7Puffle_2014_Transformation_Player_Card_Purple.png",
         "name": "Purple",
         "description": "Love to dance, picky eaters, and portrayed as divas. They can blow incredibly large bubbles by using their bubble wand.",
         "price": 400,
         "date": "August 2006"
     }, {
-        "categories": ["Adoptable", "Original"],
+        "categories": ["Adoptable", "Original", "Membership-Only"],
         "pic_url": "assets/images/bb3Puffle_2014_Transformation_Player_Card_Yellow.png",
         "name": "Yellow",
         "description": "Creative, artistic, can sculpt and paint great pieces of art. They love anything that has got to do with the arts, be it art, design, stage plays, and music.",
         "price": 400,
         "date": "October 2007"
     }, {
-        "categories": ["Adoptable", "Original"],
+        "categories": ["Adoptable", "Original", "Membership-Only"],
         "pic_url": "assets/images/bb8Puffle_2014_Transformation_Player_Card_White.png",
         "name": "White",
         "description": "The smallest of all puffles, which fits their shy and quiet personalities. Their ice breath can freeze anything, and they like ice skating. They are connected back to ninjas quite often, especially since white puffles were first spotted at the Dojo Courtyard.",
         "price": 400,
         "date": "February 2009"
     }, {
-        "categories": ["Adoptable", "Original"],
+        "categories": ["Adoptable", "Original", "Membership-Only"],
         "pic_url": "assets/images/449Puffle_2014_Transformation_Player_Card_Orange.png",
         "name": "Orange",
         "description": "Depicted as goofy and zany, and native to the Box Dimension. Their prominent buck teeth and long tongues make them stand out among other puffles.",
         "price": 400,
         "date": "February 2010"
     }, {
-        "categories": ["Adoptable", "Original"],
+        "categories": ["Adoptable", "Original", "Membership-Only"],
         "pic_url": "assets/images/aafPuffle_2014_Transformation_Player_Card_Brown.png",
         "name": "Brown",
         "description": "The most intelligent puffles, they love experiments. Equiped with safety goggles and a pocket multi-purpose laser shooter.",
         "price": 400,
         "date": "January 2011"
     }, {
-        "categories": ["Adoptable", "Original", "Premium"],
+        "categories": ["Adoptable", "Original", "Premium", "Membership-Only"],
         "pic_url": "assets/images/aa0Puffle_2014_Transformation_Player_Card_Rainbow.png",
         "name": "Rainbow",
         "description": "Legendary, majestic, can fly, and fart sparkles. Native to the Cloud Forest. Their existence was rumored for years. Non-members could adopt them without needing to complete any tasks at the Rainbow Puffle Party.",
         "price": null,
         "date": "March 2013"
     }, {
-        "categories": ["Adoptable", "Original", "Premium"],
+        "categories": ["Adoptable", "Original", "Premium", "Membership-Only"],
         "pic_url": "assets/images/11dPuffle_2014_Transformation_Player_Card_Golden.png",
         "name": "Gold",
         "description": "Energetic, hide-and-seek experts, and they shine a lot. Like rainbow puffles, gold puffles had been rumored to exist years before being discovered. They can dig up exclusive golden items when they are walked.",
         "price": 10,
         "date": "November 2013"
     }, {
-        "categories": ["Adoptable", "Mythical Puffle Creature"],
+        "categories": ["Adoptable", "Mythical Puffle Creature", "Membership-Only"],
         "pic_url": "assets/images/ff5BlackTRexPuffle.png",
         "name": "Dinosaur",
         "description": "There are six variants: Blue Triceratops, Black T-Rex, Pink Stegosaurus, Red Triceratops, Purple T-Rex, and Yellow Stegosaurus. Rescued by time travelers. They can dig up exclusive prehistoric items when they are walked.",
         "price": null,
         "date": "January 2014/Age of the dinosaurs"
     }, {
-        "categories": ["Adoptable", "Mythical Puffle Creature"],
+        "categories": ["Adoptable", "Mythical Puffle Creature", "Membership-Only"],
         "pic_url": "assets/images/cc3Puffle_2014_Transformation_Player_Card_Blue_Border_Collie.png",
         "name": "Border Collie",
         "description": "Full of energy, they are always up for a walk or playing fetch. Just watch out for their slobbery kisses. They can dig up exclusive items and exclusive prehistoric items when they are walked.",
         "price": 800,
         "date": "April 2014"
     }, {
-        "categories": ["Adoptable", "Mythical Puffle Creature"],
+        "categories": ["Adoptable", "Mythical Puffle Creature", "Membership-Only"],
         "pic_url": "assets/images/66ePuffle_2014_Transformation_Player_Card_Orange_Tabby_Cat.png",
         "name": "Tabby Cat",
         "description": "Always curious, they will get into almost anything. They love high places and being the center of attention. They can dig up exclusive items and exclusive prehistoric items when they are walked.",
         "price": 800,
         "date": "April 2014"
     }, {
-        "categories": ["Adoptable", "Mythical Puffle Creature"],
+        "categories": ["Adoptable", "Mythical Puffle Creature", "Membership-Only"],
         "pic_url": "assets/images/44dSnowman_Puffle_up-close.png",
         "name": "Snowman",
         "description": "Artificial puffles made out of snow who resemble Olaf, and were created by Elsa. They can dig up exclusive items and exclusive prehistoric items when they are walked.",
         "price": null,
         "date": "August 2014"
     }, {
-        "categories": ["Adoptable", "Mythical Puffle Creature"],
+        "categories": ["Adoptable", "Mythical Puffle Creature", "Membership-Only"],
         "pic_url": "assets/images/ff3DWkiQRl.png",
         "name": "Ghost",
         "description": "Supernatural puffles that were lurking in the Puffle Hotel when it was haunted by Skip during the Halloween Party 2014. They can fly, and pass through anything.",
         "price": null,
         "date": "October 2014"
     }, {
-        "categories": ["Adoptable", "Mythical Puffle Creature"],
+        "categories": ["Adoptable", "Mythical Puffle Creature", "Membership-Only"],
         "pic_url": "assets/images/ddePuffle_yellow1020_paper.png",
         "name": "Yellow Unicorn",
         "description": "Found deep in the Wilderness. They were Adoptable in the mobile application Puffle Wild and at the Puffle Wild room. Other variants appeared at the Medieval Party 2013.",
         "price": 800,
         "date": "November 2014"
     }, {
-        "categories": ["Adoptable", "Mythical Puffle Creature"],
+        "categories": ["Adoptable", "Mythical Puffle Creature", "Membership-Only"],
         "pic_url": "assets/images/008Puffle_white1014_paper.png",
         "name": "Rabbit",
         "description": "Found deep in the Wilderness. They were Adoptable in the mobile application Puffle Wild and at the Puffle Wild room. They have large ears. A not Adoptable purple variant can be seen in the Puffle Wild loading screen.",
         "price": 800,
         "date": "November 2014"
     }, {
-        "categories": ["Adoptable", "Mythical Puffle Creature"],
+        "categories": ["Adoptable", "Mythical Puffle Creature", "Membership-Only"],
         "pic_url": "assets/images/ddePuffle_orange1009_paper.png",
         "name": "Raccoon",
         "description": "Found deep in the Wilderness. They were Adoptable in the mobile application Puffle Wild and at the Puffle Wild room.",
         "price": 800,
         "date": "November 2014"
     }, {
-        "categories": ["Adoptable", "Mythical Puffle Creature"],
+        "categories": ["Adoptable", "Mythical Puffle Creature", "Membership-Only"],
         "pic_url": "assets/images/001Puffle_black1017_paper.png",
         "name": "Deer",
         "description": "Found deep in the Wilderness. They were Adoptable in the mobile application Puffle Wild and at the Puffle Wild room. They were first seen in the first version of another mobile app, Sled Racer.",
         "price": 800,
         "date": "November 2014"
     }, {
-        "categories": ["Adoptable", "Mythical Puffle Creature"],
+        "categories": ["Adoptable", "Mythical Puffle Creature", "Membership-Only"],
         "pic_url": "assets/images/ff0Blue_Crystal_Puffle_smiling.png",
         "name": "Blue Crystal",
         "description": "Magic flying crystalline puffles, brought by Merry Walrus. Six of these puffles pull the Merry Walrus' sleigh, one of them is Enrique, from the We Wish You a Merry Walrus TV special.",
         "price": null,
         "date": "December 2014"
     }, {
-        "categories": ["Adoptable", "Mythical Puffle Creature"],
+        "categories": ["Adoptable", "Mythical Puffle Creature", "Membership-Only"],
         "pic_url": "assets/images/884Green_Alien_Puffle.png",
         "name": "Alien",
         "description": "Came from outer space. They abduct penguins to their UFO temporarily. During Operation: Crustacean, non-members could adopt the green variant.",
