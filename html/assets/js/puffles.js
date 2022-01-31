@@ -54,10 +54,13 @@ function chooseSort(t) {
 
 function chooseFilter(f) {
     let r = new Set();
+    let t = [];
 
     f.forEach(c => {
         if (data.categories.includes(c)) r.add(c);
     });
+
+    t = [...document.getElementsByTagName("input")].map(i => i.checked = f.includes(i.name));
 
     data.filter.categories = [...r];
 
@@ -114,6 +117,16 @@ function populateTable(el) {
     });
 }
 
+function populateMenu(el) {
+    if (!(el = document.getElementById(el))) return;
+    data.categories.forEach(c => {
+        let sub = el.children[0].cloneNode(true);
+        sub.children[0].innerText = c;
+        sub.children[0].href = `javascript:chooseFilter(["${c}"])`;
+        el.appendChild(sub);
+    })
+}
+
 window.onload = () => {
     let categories = new Set();
     let e = document.getElementById("categories");
@@ -130,4 +143,5 @@ window.onload = () => {
         e.innerHTML += `<input onclick="search()" type="checkbox" name="${c}" checked><label for="${c}">${c}</label>`
     })
     populateTable("shop");
+    populateMenu("categories-submenu");
 }
