@@ -308,3 +308,8 @@ img.shop {
 #shop>tbody:nth-child(even) {
     background-color: var(--high-bg);
 }
+
+.puff-cat>span {
+    display: block;
+    margin: 4px;
+}
