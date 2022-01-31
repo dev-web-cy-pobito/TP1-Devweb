@@ -82,7 +82,7 @@ a:link, a:visited {
 }
 
 #header li:hover {
-    color: var(--text-darker)
+    color: var(--text-color-hover)
 }
 
 #footer {
@@ -93,7 +93,7 @@ a:link, a:visited {
 }
 
 li:hover {
-    color: var(--text-lighter);
+    color: var(--high-text-color-hover);
 }
 
 nav.h-menu {
@@ -115,18 +115,22 @@ nav.h-menu>ul>li {
 
 nav.v-menu>ul {
     list-style-type: none;
-    /* margin-left: 20px; */
     padding: 0;
 }
 
 nav.v-menu>ul>li {
     padding: 5px;
     padding-left: 20px;
-    /* margin-bottom: 10px; */
+    display: block;
 }
 
 nav.v-menu>ul>li:hover {
     background-color: var(--high-bg-hover);
+}
+
+nav.v-menu>ul>li>a {
+    display: block;
+    width: 100%;
 }
 
 p.footer {
@@ -134,8 +138,8 @@ p.footer {
 }
 
 .dark-bg {
-    background-color: var(--bg-secondary);
-    border-color: var(--border-primary);
+    background-color: var(--high-bg);
+    border-color: var(--high-border-color);
 }
 
 .box-title {
