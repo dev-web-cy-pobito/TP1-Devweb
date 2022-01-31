@@ -1,4 +1,4 @@
-# TP1-Devweb
+# TP1-Devweb - Moldovan Alexandru & Rodrigues Samuel
 
 Projet devweb 1
 
