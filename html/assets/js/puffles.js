@@ -305,6 +305,8 @@ window.onload = () => {
     e.innerHTML = "";
 
     data.puffles.forEach(p => {
+        if (p.categories.length == 0) p.categories.push("Other");
+
         p.categories.forEach(c => {
             categories.add(c);
         });
