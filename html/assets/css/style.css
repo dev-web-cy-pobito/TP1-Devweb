@@ -5,7 +5,7 @@
     --text-color-hover: #f0f6fc;
 
     --low-bg: #010409;
-    --low-text-color: #444c56;
+    --low-text-color: #30363d;
 
     --high-bg: #161B22;
     --high-bg-hover: #161B22;
@@ -227,7 +227,7 @@ form {
     width: 100%;
 }
 
-.contact-form input, .contact-form input[type=date], .contact-form select, .contact-form textarea {
+input, input[type=date], select, textarea{
     margin-top: 4px;
     padding: 10px;
     font-size: medium;
@@ -239,15 +239,15 @@ form {
     box-sizing: border-box;
 }
 
-#picker {
-    background: #90969b;
+input[type=checkbox] {
+    width: unset;
 }
 
 ::placeholder {
-    color: #90969b;
+    color: var(--low-text-color);
 }
 
-.contact-form button[type=submit] {
+button {
     color: inherit;
     font-weight: bold;
     border: 1px solid var(--high-border-color);
@@ -260,7 +260,7 @@ form {
     width: fit-content;
 }
 
-.contact-form button[type=submit]:hover {
+button:hover {
     color: var(--higher-text-color);
     background-color: var(--higher-bg);
     border-color: var(--high-border-color);
@@ -286,4 +286,25 @@ img.shop {
     max-width: 50px;
     max-height: 50px;
     margin: 10px;
+}
+
+#categories {
+    margin: 10px;
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+#categories>div {
+    display: inline;
+}
+
+#shop tr>td {
+    padding: 10px;
+    text-align: justify;
+}
+
+#shop>tbody:nth-child(even) {
+    background-color: var(--high-bg);
 }

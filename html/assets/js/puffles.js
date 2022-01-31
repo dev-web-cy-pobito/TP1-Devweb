@@ -314,7 +314,7 @@ window.onload = () => {
     data.categories = [...categories];
     data.filter.categories = [...categories];
     data.categories.forEach(c => {
-        e.innerHTML += `<input onclick="search()" type="checkbox" name="${c}" checked><label for="${c}">${c}</label>`
+        e.innerHTML += `<div><input onclick="search()" type="checkbox" name="${c}" checked><label for="${c}">${c}</label></div>`
     })
     populateTable("shop");
     populateMenu("categories-submenu");
