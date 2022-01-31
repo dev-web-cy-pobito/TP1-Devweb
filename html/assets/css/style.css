@@ -309,7 +309,20 @@ img.shop {
     background-color: var(--high-bg);
 }
 
+.puff-cat>span:first-child {
+    margin-top: 0px;
+}
+
 .puff-cat>span {
+    text-align: center;
     display: block;
-    margin: 4px;
+    margin-bottom: 6px;
+    padding: 4px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--high-bg);
+}
+
+.puff-cat>span:last-child {
+    margin-bottom: 0px;
 }
