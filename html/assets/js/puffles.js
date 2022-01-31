@@ -1,84 +1,84 @@
 const data = {
     categories: [],
     puffles : [{
-        "categories": ["Adoptable"],
+        "categories": ["Adoptable", "Original"],
         "pic_url": "assets/images/338Puffle_2014_Transformation_Player_Card_Blue.png",
         "name": "Blue",
         "description": "Considered trustworthy, loyal, and easy to care for. Their favorite toy is a ball.",
         "price": 400,
         "date": "November 2005"
     }, {
-        "categories": ["Adoptable"],
+        "categories": ["Adoptable", "Original"],
         "pic_url": "assets/images/882Puffle_2014_Transformation_Player_Card_Red.png",
         "name": "Red",
         "description": "The most adventurous, and native to Rockhopper Island. They like being like pirates, bowling, surfing, and eating stinky cheese.",
         "price": 400,
         "date": "June 9, 2005[1]"
     }, {
-        "categories": ["Adoptable"],
+        "categories": ["Adoptable", "Original"],
         "pic_url": "assets/images/449Puffle_2014_Transformation_Player_Card_Pink.png",
         "name": "Pink",
         "description": "Known for their athleticism, and depicted as cheerful. The best swimmers.",
         "price": 400,
         "date": "November 2005"
     }, {
-        "categories": ["Adoptable"],
+        "categories": ["Adoptable", "Original"],
         "pic_url": "assets/images/bb0Puffle_2014_Transformation_Player_Card_Green.png",
         "name": "Green",
         "description": "Very energetic and silly, much like clowns, and usually seen with a propeller cap or a unicycle.",
         "price": 400,
         "date": "November 2005"
     }, {
-        "categories": ["Adoptable"],
+        "categories": ["Adoptable", "Original"],
         "pic_url": "assets/images/33cPuffle_2014_Transformation_Player_Card_Black.png",
         "name": "Black",
         "description": "The strong and silent type, however, they have a wild side; they love to skateboard, and can fly as a fireball. They rarely smile, but they will smile when pleased.",
         "price": 400,
         "date": "November 2005"
     }, {
-        "categories": ["Adoptable"],
+        "categories": ["Adoptable", "Original"],
         "pic_url": "assets/images/ee7Puffle_2014_Transformation_Player_Card_Purple.png",
         "name": "Purple",
         "description": "Love to dance, picky eaters, and portrayed as divas. They can blow incredibly large bubbles by using their bubble wand.",
         "price": 400,
         "date": "August 2006"
     }, {
-        "categories": ["Adoptable"],
+        "categories": ["Adoptable", "Original"],
         "pic_url": "assets/images/bb3Puffle_2014_Transformation_Player_Card_Yellow.png",
         "name": "Yellow",
         "description": "Creative, artistic, can sculpt and paint great pieces of art. They love anything that has got to do with the arts, be it art, design, stage plays, and music.",
         "price": 400,
         "date": "October 2007"
     }, {
-        "categories": ["Adoptable"],
+        "categories": ["Adoptable", "Original"],
         "pic_url": "assets/images/bb8Puffle_2014_Transformation_Player_Card_White.png",
         "name": "White",
         "description": "The smallest of all puffles, which fits their shy and quiet personalities. Their ice breath can freeze anything, and they like ice skating. They are connected back to ninjas quite often, especially since white puffles were first spotted at the Dojo Courtyard.",
         "price": 400,
         "date": "February 2009"
     }, {
-        "categories": ["Adoptable"],
+        "categories": ["Adoptable", "Original"],
         "pic_url": "assets/images/449Puffle_2014_Transformation_Player_Card_Orange.png",
         "name": "Orange",
         "description": "Depicted as goofy and zany, and native to the Box Dimension. Their prominent buck teeth and long tongues make them stand out among other puffles.",
         "price": 400,
         "date": "February 2010"
     }, {
-        "categories": ["Adoptable"],
+        "categories": ["Adoptable", "Original"],
         "pic_url": "assets/images/aafPuffle_2014_Transformation_Player_Card_Brown.png",
         "name": "Brown",
         "description": "The most intelligent puffles, they love experiments. Equiped with safety goggles and a pocket multi-purpose laser shooter.",
         "price": 400,
         "date": "January 2011"
     }, {
-        "categories": ["Adoptable"],
+        "categories": ["Adoptable", "Original", "Premium"],
         "pic_url": "assets/images/aa0Puffle_2014_Transformation_Player_Card_Rainbow.png",
         "name": "Rainbow",
         "description": "Legendary, majestic, can fly, and fart sparkles. Native to the Cloud Forest. Their existence was rumored for years. Non-members could adopt them without needing to complete any tasks at the Rainbow Puffle Party.",
         "price": null,
         "date": "March 2013"
     }, {
-        "categories": ["Adoptable"],
+        "categories": ["Adoptable", "Original", "Premium"],
         "pic_url": "assets/images/11dPuffle_2014_Transformation_Player_Card_Golden.png",
         "name": "Gold",
         "description": "Energetic, hide-and-seek experts, and they shine a lot. Like rainbow puffles, gold puffles had been rumored to exist years before being discovered. They can dig up exclusive golden items when they are walked.",
@@ -210,7 +210,7 @@ const data = {
     },
     sort: {
         by : "name",
-        ascendant: false
+        ascendant: true
     }
 };
 
@@ -249,7 +249,7 @@ function search() {
 }
 
 function puffleFilter(p) {
-    let r = (p.categories.length == 0);
+    let r = (p.categories.length == 0 && data.filter.categories.length == 0);
     p.categories.forEach(c => {
         if (data.filter.categories.includes(c) && p.name.toLowerCase().includes(data.filter.search.toLowerCase())) r = true;
     });
