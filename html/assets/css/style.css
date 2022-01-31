@@ -1,25 +1,42 @@
 :root {
-    --bg-input: #010409;
-    --bg-main: #0D1117;
-    --bg-secondary: #161B22;
-    --border-primary: #30363d;
-    --border-lighter: #444c56;
-    /* --border-darker: ; */
-    --text-darker: #afb5bb;
-    --text: #c9d1d9;
-    --text-lighter: #f0f6fc;
+    --bg: #0D1117;
+    --border-color: #30363d;
+    --text-color: #c9d1d9;
+    --text-color-hover: #f0f6fc;
+
+    --low-bg: #010409;
+    --low-text-color: #444c56;
+
+    --high-bg: #161B22;
+    --high-bg-hover: #161B22;
+    --high-border-color: #444c56;
+    --high-text-color: #f0f6fc;
+    --high-text-color-hover: #c9d1d9;
+
+    --higher-bg: #30363d;
+    --higher-border-color: #444c56;
+    --higher-text-color: #ffffff;
 }
 
 @media (prefers-color-scheme: light) {
-    :root {
-        --bg-input: #f6f8fa;
-        --bg-main: #ffffff;
-        --bg-secondary: #f6f8fa;
-        --border-primary: #d0d7de;
-        --border-lighter: #d0d7de;
-        --text: #24292f;
-        --text-darker: #57606a;
-        --text-lighter: #24292f;
+    :root{
+        --bg: #FFFFFF;
+        --border-color: #d0d7de;
+        --text-color: #24292f;
+        --text-color-hover: #2e353d;
+
+        --low-bg: #f6f8fa;
+        --low-text-color: #30363d;
+
+        --high-bg: #f6f8fa;
+        --high-bg-hover: #f6f8fa;
+        --high-border-color: #d0d7de;
+        --high-text-color: #24292f;
+        --high-text-color-hover: #2e353d;
+
+        --higher-bg: #eeeeee;
+        --higher-border-color: #d0d7de;
+        --higher-text-color: #171b1f;
     }
 }
 
@@ -27,13 +44,15 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    background-color: var(--bg-main);
-    color: var(--text);
     font-family: Arial, Helvetica, sans-serif;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: stretch;
+
+    background-color: var(--bg);
+    color: var(--text-color);
+    border-color: var(--border-color);
 }
 
 p {
@@ -47,8 +66,8 @@ a:link, a:visited {
 
 #vertical-center {
     display: flex;
-    padding-left: 5px;
-    padding-right: 5px;
+    /* padding-left: 5px;
+    padding-right: 5px; */
     flex-grow: 2;
     margin-bottom: 30px;
     margin-top: 30px;
@@ -58,12 +77,23 @@ a:link, a:visited {
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
-    color: var(--text-lighter);
+    background: var(--high-bg);
+    color: var(--high-text-color);
+}
+
+#header li:hover {
+    color: var(--text-darker)
 }
 
 #footer {
+    background: var(--high-bg);
+    color: var(--text-color);
     text-align: center;
     padding: 20px;
+}
+
+li:hover {
+    color: var(--text-lighter);
 }
 
 nav.h-menu {
@@ -83,22 +113,20 @@ nav.h-menu>ul>li {
     display: inline-block;
 }
 
-nav.h-menu>ul>li:hover {
-    color: var(--text-darker)
-}
-
 nav.v-menu>ul {
     list-style-type: none;
-    margin-left: 20px;
+    /* margin-left: 20px; */
     padding: 0;
 }
 
 nav.v-menu>ul>li {
-    margin-bottom: 10px;
+    padding: 5px;
+    padding-left: 20px;
+    /* margin-bottom: 10px; */
 }
 
 nav.v-menu>ul>li:hover {
-    color: var(--text-lighter);
+    background-color: var(--high-bg-hover);
 }
 
 p.footer {
@@ -114,8 +142,8 @@ p.footer {
     margin: 0;
     padding: 10px;
     padding-left: 10px;
-    color: var(--text-lighter);
-    background-color: var(--bg-secondary);
+    color: var(--high-text-color);
+    background-color: var(--high-bg);
 }
 
 .boxed {
@@ -123,11 +151,10 @@ p.footer {
     border-width: 1px;
     border-style: solid;
     border-radius: 6px;
-    border-color: var(--border-primary);
 }
 
 .vl {
-    border-right: 2px solid var(--border-primary);
+    border-right: 2px solid var(--border-color);
 }
 
 div.content {
@@ -163,14 +190,6 @@ div .title {
     max-height: 75px;
 }
 
-div.item-list tr {
-    border-bottom: 3px solid var(--border-primary);
-}
-
-div.item-list img {
-    max-width: 100px;
-}
-
 form {
     all: inherit;
 }
@@ -204,29 +223,16 @@ form {
     width: 100%;
 }
 
-/* .contact-form input, .contact-form input[type=date], .contact-form select, .contact-form textarea {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    padding: 5px;
-    color: inherit;
-    background-color: #161B22;
-    border: none;
-    border-bottom: 2px solid var(--border-darker);
-    width: 100%;
-    box-sizing: border-box;
-} */
-
 .contact-form input, .contact-form input[type=date], .contact-form select, .contact-form textarea {
     margin-top: 4px;
     padding: 10px;
     font-size: medium;
     color: inherit;
-    background-color: var(--bg-input);
-    border: 1px solid var(--border-primary);
+    background-color: var(--low-bg);
+    border: 1px solid var(--border-color);
     border-radius: 6px;
     width: 100%;
     box-sizing: border-box;
-
 }
 
 #picker {
@@ -240,10 +246,10 @@ form {
 .contact-form button[type=submit] {
     color: inherit;
     font-weight: bold;
-    border: 1px solid var(--border-lighter);
+    border: 1px solid var(--high-border-color);
     padding: 10px;
     border-radius: 4px;
-    background-color: var(--border-primary);
+    background-color: var(--high-bg);
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -251,9 +257,9 @@ form {
 }
 
 .contact-form button[type=submit]:hover {
-    color: var(--text-lighter);
-    background-color: #47505a;
-    border-color: var(--border-primary);
+    color: var(--higher-text-color);
+    background-color: var(--higher-bg);
+    border-color: var(--high-border-color);
 }
 
 .contact-form .radio {
@@ -271,67 +277,6 @@ input[type=radio] {
     margin: 0%;
     padding: 0%;
 }
-
-/* .contact-form {
-    margin-left: 20%;
-    margin-right: 20%;
-} */
-
-/* div.contact-form form label, select{
-    width: 100%;
-    display: block;
-}
-
-div.contact-form form input, div.contact-form form label, textarea, select {
-    width: 70%;
-    margin-left: 15%;
-    margin-right: 15%;
-    margin-top: 1%;
-    display: block;
-}
-
-div.contact-form form div input, div.contact-form form div label {
-    width: 85%;
-    margin: 0;
-}
-
-div.contact-form div {
-    width: 32.75%;
-    margin-left: 15%;
-    margin-right: 15%;
-}
-
-div.contact-form div:nth-child(2n) {
-    margin-left: 0;
-}
-*/
-
-/* div.contact-form div:nth-child(2n) {
-    margin-right: 28.25%;
-} */
-
-/*
-div.contact-form div:nth-child(2n+1) {
-    margin-right: 0;
-}
-
-div.inline.radio {
-    margin-left: 15% !important;
-    width: 100%;
-}
-
-.radio input, .radio label {
-    display: inline-block !important;
-    width: min-content !important;
-    margin: 0% !important;
-    margin-left: 5% !important;
-}
-
-div.contact-form button {
-    margin-left: 15%;
-    margin-top: 2%;
-}
-*/
 
 img.shop {
     max-width: 50px;
