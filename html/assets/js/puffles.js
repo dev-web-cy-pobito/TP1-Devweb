@@ -282,7 +282,7 @@ function populateTable(el) {
         <td><img class="shop" src="${p.pic_url}"</td>
         <td>${p.name}</td>
         <td class="puff-cat">${p.categories.map(c => "<span>" + c + "</span>").join("")}</td>
-        <td>${p.price ?? ""}</td>
+        <td class="puff-price"><span>${p.price ?? ""}</span></td>
         <td>${p.description}</td>
         <td>${p.date}</td>
     </tr>`

@@ -324,5 +324,21 @@ img.shop {
 }
 
 .puff-cat>span:last-child {
+    display: block;
+    width: fit-content;
     margin-bottom: 0px;
+}
+
+.puff-price{
+    
+}
+
+.puff-price>span {
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    margin-right: 10px;
+    margin-left: 10px;
+    display: block;
+    width: fit-content;
 }
