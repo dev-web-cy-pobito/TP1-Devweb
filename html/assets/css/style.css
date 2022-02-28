@@ -342,3 +342,7 @@ img.shop {
     display: block;
     width: fit-content;
 }
+
+input:invalid {
+    color: red;
+}
