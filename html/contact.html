@@ -42,19 +42,19 @@
                         <div class="contact-form">
                             <div class="col-half-left">
                                 <label>First name</label>
-                                <input name="first-name" placeholder="First name" type="text">
+                                <input name="first-name" placeholder="First name" type="text" required>
                             </div>
                             <div class="col-half-right">
                                 <label>Last name</label>
-                                <input name="last-name" placeholder="Last name" type="text">
+                                <input name="last-name" placeholder="Last name" type="text" required>
                             </div>
                             <div class="col-full">
                                 <label>Email Address</label>
-                                <input name="mail" placeholder="example@domain.com" type="email">
+                                <input name="mail" placeholder="example@domain.com" type="email" required>
                             </div>
                             <div class="col-full">
                                 <label>Birth date</label><br>
-                                <input name="date" placeholder="dd/mm/yyyy" type="date">
+                                <input name="date" placeholder="dd/mm/yyyy" type="date" required>
                             </div>
                             <div class="col-full">
                                 <label>Gender</label><br>
@@ -71,17 +71,17 @@
                             </div>
                             <div class="col-full">
                                 <label>Your activity in France</label><br>
-                                <select id="jobs">
+                                <select id="jobs" required>
                                     <option value disabled selected>Loading...</option>
                                 </select>
                             </div>
                             <div class="col-full">
                                 <label>Subject</label>
-                                <input placeholder="Subject" name="subject">
+                                <input placeholder="Subject" name="subject" required>
                             </div>
                             <div class="col-full">
                                 <label>Message</label>
-                                <textarea placeholder="Message" name="message"></textarea>
+                                <textarea placeholder="Message" name="message" required></textarea>
                             </div>
                             <div class="col-full">
                                 <button type="submit">Send</button>

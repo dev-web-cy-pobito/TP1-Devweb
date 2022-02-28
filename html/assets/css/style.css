@@ -359,3 +359,7 @@ img.shop {
     transform: scale(3);
     cursor: zoom-out;
 }
+
+input:invalid {
+    color: red;
+}
