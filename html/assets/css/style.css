@@ -19,7 +19,7 @@
 }
 
 @media (prefers-color-scheme: light) {
-    :root{
+    :root {
         --bg: #FFFFFF;
         --border-color: #d0d7de;
         --text-color: #24292f;
@@ -59,7 +59,8 @@ p {
     margin: 0;
 }
 
-a:link, a:visited {
+a:link,
+a:visited {
     color: unset;
     text-decoration: unset;
 }
@@ -227,7 +228,10 @@ form {
     width: 100%;
 }
 
-input, input[type=date], select, textarea{
+input,
+input[type=date],
+select,
+textarea {
     margin-top: 4px;
     padding: 10px;
     font-size: medium;
@@ -329,9 +333,7 @@ img.shop {
     margin-bottom: 0px;
 }
 
-.puff-price{
-    
-}
+.puff-price {}
 
 .puff-price>span {
     font-weight: bold;
@@ -341,4 +343,19 @@ img.shop {
     margin-left: 10px;
     display: block;
     width: fit-content;
+}
+
+.imgZoom input[type=checkbox] {
+    display: none;
+}
+
+.imgZoom img {
+    /* margin: 100px; */
+    transition: transform 0.25s ease;
+    cursor: zoom-in;
+}
+
+.imgZoom input[type=checkbox]:checked~label>img {
+    transform: scale(3);
+    cursor: zoom-out;
 }

@@ -279,7 +279,14 @@ function populateTable(el) {
     temp_puffles.forEach(p => {
         el.innerHTML += `
     <tr>
-        <td><img class="shop" src="${p.pic_url}"</td>
+        <td>
+            <div class="imgZoom">
+                <input type="checkbox" id="zoom${p.name}">
+                <label for="zoom${p.name}">
+                    <img class="shop" src="${p.pic_url}">
+                </label>
+            </div>
+        </td>
         <td>${p.name}</td>
         <td class="puff-cat">${p.categories.map(c => "<span>" + c + "</span>").join("")}</td>
         <td class="puff-price"><span>${p.price ?? ""}</span></td>
@@ -314,7 +321,11 @@ window.onload = () => {
     data.categories = [...categories];
     data.filter.categories = [...categories];
     data.categories.forEach(c => {
-        e.innerHTML += `<div><input onclick="search()" type="checkbox" name="${c}" checked><label for="${c}">${c}</label></div>`
+        e.innerHTML += `
+        <div>
+            <input onclick="search()" type="checkbox" name="${c}" checked>
+            <label for="${c}">${c}</label>
+        </div>`
     })
     populateTable("shop");
     populateMenu("categories-submenu");
