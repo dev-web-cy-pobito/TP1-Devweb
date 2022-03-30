@@ -1,0 +1,10 @@
+use Puffles;
+drop table if exists used_coupons;
+drop table if exists ordered_puffles;
+drop table if exists coupons;
+drop table if exists orders;
+drop table if exists categorized_puffles;
+drop table if exists categories;
+drop table if exists puffles;
+drop table if exists users;
+drop database Puffles;
