@@ -48,6 +48,17 @@ class DB {
     }
 
     /**
+     * Generates mysqli bind_param character for array of values
+     */
+    protected function getStrtype($values) {
+        $strtype = "";
+        foreach ($values as $value) {
+            $strtype .= $this->getCharType($value);
+        }
+        return $strtype;
+    }
+
+    /**
      * Gets all tables from database
      */
     private function getAllTables() {
@@ -81,6 +92,8 @@ class DB {
             return array_map(function($a) {
                 return $a[0];
             }, $r);
+        } else {
+            throw new RuntimeException("Table ${table} does not exist");
         }
     }
 
@@ -110,6 +123,37 @@ class DB {
         
     }
 
+    public function checkData($data, $table) {
+        $columns = $this->getAllColumns($table);
+
+        $d = array_keys($data);
+
+        $diff = array_diff($columns, $d);
+        if (sizeof($diff) > 0) {
+            throw new RuntimeException("Missing data: " . implode(", ", $diff));
+        }
+        return true;
+    }
+
+    public function setSimpleValues($table, $data, $id = false, $unique = false) {
+
+        return "marche pas";
+        
+        if ($this->checkData($data, $table)) {
+
+            $sql = "insert into ${table} values (" . implode(",", array_map(function($a) {return "?";}, $data)) . ")" . (($id != false) ? " where id = ?;" : ";");
+            echo json_encode($sql);
+            $r = $this->con->prepare($sql);
+            $r->bind_param($this->getStrtype(array_values($data)), ...array_values($data));
+            if ($id) {
+                $r->bind_param($this->getCharType($id), $id);
+            }
+            $r->execute();
+            return $r->get_result();
+        }
+        return false;
+    }
+
     /**
      * Perform a basic unique select query for a table, a column and a value
      */
@@ -121,5 +165,8 @@ class DB {
         return null;
     }
 }
+
+$db = new DB("localhost", "Puffles", "abc", "freforlife");
+echo json_encode($db->setSimpleValues("users", ["email"=>"a", "password_hash" => "aaaa", "permission" => 1]));
 
 ?>
