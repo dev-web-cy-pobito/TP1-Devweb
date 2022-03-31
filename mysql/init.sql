@@ -15,6 +15,7 @@ create table if not exists users (
     -- User permission level (0 = visitor, 1 = user, 2 = admin)
     permission int not null default 1,
 
+    unique(email),
     primary key (id)
 );
 
