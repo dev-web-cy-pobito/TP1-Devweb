@@ -1,5 +1,7 @@
 <?php
 
+mysqli_report(MYSQLI_REPORT_ALL);
+
 /**
  * Database class
  */
@@ -128,26 +130,23 @@ class DB {
 
         $d = array_keys($data);
 
-        $diff = array_diff($columns, $d);
-        if (sizeof($diff) > 0) {
-            throw new RuntimeException("Missing data: " . implode(", ", $diff));
-        }
+        // TODO:  check data
         return true;
     }
 
     public function setSimpleValues($table, $data, $id = false, $unique = false) {
-
-        return "marche pas";
         
         if ($this->checkData($data, $table)) {
 
-            $sql = "insert into ${table} values (" . implode(",", array_map(function($a) {return "?";}, $data)) . ")" . (($id != false) ? " where id = ?;" : ";");
-            echo json_encode($sql);
+            $sql = "insert into ${table} (" . implode(", ", array_keys($data)) . ") values (" . implode(", ", array_map(function($a) {return "?";}, $data)) . ")" . (($id != false) ? " where id = ?;" : ";");
+            
             $r = $this->con->prepare($sql);
+
             $r->bind_param($this->getStrtype(array_values($data)), ...array_values($data));
             if ($id) {
                 $r->bind_param($this->getCharType($id), $id);
             }
+
             $r->execute();
             return $r->get_result();
         }
@@ -165,8 +164,5 @@ class DB {
         return null;
     }
 }
-
-$db = new DB("localhost", "Puffles", "abc", "freforlife");
-echo json_encode($db->setSimpleValues("users", ["email"=>"a", "password_hash" => "aaaa", "permission" => 1]));
 
 ?>
