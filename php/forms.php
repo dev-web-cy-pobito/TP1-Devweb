@@ -59,7 +59,7 @@
                 break;
             case 'email':
                 $result = $d;
-                if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                if (filter_var($d, FILTER_VALIDATE_EMAIL)) {
                     throw new Exception('invalid email', 1);
                 }
 
