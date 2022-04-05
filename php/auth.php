@@ -32,9 +32,4 @@ class Auth {
     }
 }
 
-$db = new DB("localhost", "Puffles", "abc", "freforlife");
-$a = new Auth($db);
-// $a->register("teste", "oups");
-echo $a->login("teste", "oupss");
-
 ?>
