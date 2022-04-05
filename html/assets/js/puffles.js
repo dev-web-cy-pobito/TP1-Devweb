@@ -291,17 +291,22 @@ function puffleSort(p1, p2) {
 
 function addCart(a) {
     let max = parseInt(a.parentElement.getAttribute("max"));
-    let i = parseInt(a.parentElement.innerText.slice(2, -2));
-    if (i < max) {
+    let i = parseInt(a.parentElement.innerText.replace("+", "").replace("-", "").replace("\n", ""));
+    if (i + 1 < max) {
         a.parentElement.innerHTML = `<button onclick="removeCart(this)">-</button>${i+1}<button onclick="addCart(this)">+</button>`;
+    } else {
+        a.parentElement.innerHTML = `<button onclick="removeCart(this)">-</button>${i+1}`;
     }
 }
 
 function removeCart(a) {
-    let i = parseInt(a.parentElement.innerText.slice(2, -2));
+    let i = parseInt(a.parentElement.innerText.replace("+", "").replace("-", "").replace("\n", ""));
 
-    if (i > 0) {
+    if (i - 1> 0) {
         a.parentElement.innerHTML = `<button onclick="removeCart(this)">-</button>${i-1}<button onclick="addCart(this)">+</button>`;
+    } else {
+        a.parentElement.innerHTML = `${i - 1}<button onclick="addCart(this)">+</button>`;
+
     }
 }
 
@@ -317,10 +322,10 @@ function populateTable(el) {
         <th onclick="chooseSort('name')">Name</th>
         <th>Categories</th>
         <th onclick="chooseSort('price')">Price</th>
-        <th>Stock</th>
         <th>Description</th>
         <th>Apparition Date</th>
         <th>Acheter</th>
+        <th>Stock</th>
     </tr>`;
 
     temp_puffles.forEach(p => {
@@ -337,10 +342,10 @@ function populateTable(el) {
         <td>${p.name}</td>
         <td class="puff-cat">${p.categories.map(c => "<span>" + c + "</span>").join("")}</td>
         <td class="puff-price"><span>${p.price ?? ""}</span></td>
-        <td class="puff-stock"><span onclick='javascript:this.innerText = ${p.stock ?? "Indisponible"}'>Vérifier</span></td>
-        <td class="puff-cart" max=${p.stock}><button onclick="removeCart(this)">-</button>0<button onclick="addCart(this)">+</button></td>
         <td>${p.description}</td>
         <td>${p.date}</td>
+        <td class="puff-cart" max=${p.stock}><button onclick="removeCart(this)">-</button>0<button onclick="addCart(this)">+</button></td>
+        <td class="puff-stock"><span onclick='javascript:this.innerText = ${p.stock ?? "Indisponible"}'>Vérifier</span></td>
     </tr>`
     });
 }
