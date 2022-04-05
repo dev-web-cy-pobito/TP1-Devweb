@@ -1,4 +1,7 @@
 use Puffles;
+drop table if exists job_to_cat;
+drop table if exists job_cats;
+drop table if exists jobs;
 drop table if exists used_coupons;
 drop table if exists ordered_puffles;
 drop table if exists coupons;

@@ -134,11 +134,11 @@ class DB {
         return true;
     }
 
-    public function setSimpleValues($table, $data, $id = false, $unique = false) {
+    public function setSimpleValues($table, $data, $id = false, $ignore = false, $unique = false) {
         
         if ($this->checkData($data, $table)) {
 
-            $sql = "insert into ${table} (" . implode(", ", array_keys($data)) . ") values (" . implode(", ", array_map(function($a) {return "?";}, $data)) . ")" . (($id != false) ? " where id = ?;" : ";");
+            $sql = "insert" . (($ignore == true) ? " ignore " : " " ) . "into ${table} (" . implode(", ", array_keys($data)) . ") values (" . implode(", ", array_map(function($a) {return "?";}, $data)) . ")" . (($id != false) ? " where id = ?;" : ";");
             
             $r = $this->con->prepare($sql);
 
@@ -151,6 +151,10 @@ class DB {
             return $r->get_result();
         }
         return false;
+    }
+
+    public function getLastInsertId(){
+        return mysqli_insert_id($this->getConnection());
     }
 
     /**

@@ -15,7 +15,7 @@
             case 'preselection':
                 $result = $d;
                 if (!in_array($d, $t['options'])) {
-                    throw new Exception('not in selection', 1);
+                    throw new Exception($d. ' not in selection', 1);
                 }
 
                 break;
