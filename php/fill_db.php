@@ -4,7 +4,7 @@ include_once "../config.php";
 include_once 'db.php';
 
 $json_jobs_path = "../data/activity.json";
-$json_jobs_path = "../data/puffles.json";
+$json_puffles_path = "../data/puffles.json";
 
 // Create connection
 $db = new DB($_CONFIG['db_host'],'Puffles', $_CONFIG['db_username'],$_CONFIG['db_password']);
@@ -26,14 +26,16 @@ foreach ($jobs_full as $cat) {
 $json_puffles = file_get_contents($json_puffles_path);
 $puffles_full = json_decode($json_puffles);
 
-foreach ($puffles as $puffle) {
+foreach ($puffles_full as $puffle) {
   $db->setSimpleValues('puffles',[
     'name' => $puffle->name,
     'pic_url' => $puffle->pic_url,
     'description' => $puffle->description,
     'stock' => $puffle->stock,
     'price' => ($puffle->price != null) ?  $puffle->price : 0,
+    'apparition_date' => $puffle->date
 ]);
+
 }
 
 
