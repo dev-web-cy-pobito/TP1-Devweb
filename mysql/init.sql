@@ -2,42 +2,6 @@ create database if not exists Puffles;
 
 use Puffles;
 
-create table if not exists job_cats (
-    -- Job Category id
-    id int not null auto_increment,
-    
-    -- Job Category name
-    name VARCHAR(255) not null,
-
-    unique(name),
-    primary key (id)
-);
-
-create table if not exists jobs (
-    -- Job id
-    id int not null auto_increment,
-    
-    -- Job name
-    name VARCHAR(255) not null,
-
-    unique(name),
-    primary key (id)
-);
-
-create table if not exists job_to_cat(
-    -- Puffle id
-    job_id int not null,
-
-    -- Category id
-    category_id int not null,
-
-    primary key (job_id, category_id),
-
-    foreign key (job_id) references jobs(id),
-    foreign key (category_id) references job_cats(id)
-);
-
-
 create table if not exists users (
     -- User id
     id int not null auto_increment,
@@ -66,7 +30,7 @@ create table if not exists puffles (
     description varchar(255),
 
     -- Whenever it first appeared
-    apparition_date date not null,
+    apparition_date varchar(255) not null,
 
     -- Current stock
     stock int not null default 0,
@@ -191,4 +155,31 @@ create table if not exists used_coupons (
     
     foreign key(order_id) references orders(id),
     foreign key(coupon_id) references coupons(id)
+);
+
+create table if not exists job_categories (
+    -- Job Category id
+    id int not null auto_increment,
+    
+    -- Job Category name
+    name VARCHAR(255) not null,
+
+    unique(name),
+    primary key (id)
+);
+
+create table if not exists jobs (
+    -- Job id
+    id int not null auto_increment,
+    
+    -- Job name
+    name VARCHAR(255) not null,
+
+    -- Category id
+    category_id int not null,
+
+    unique(name),
+
+    foreign key(category_id) references job_categories(id),
+    primary key (id)
 );
