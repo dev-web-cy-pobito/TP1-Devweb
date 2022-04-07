@@ -10,7 +10,7 @@ class Jobs {
     }
 
     private function getCats($with_id = false) {
-        return $this->db->getColumns('job_categories',$with_id ? ['id','name'] : ['name']);
+        return $this->db->getRowsByColumns('job_categories',$with_id ? ['id','name'] : ['name']);
     }
 
     private function getJobsFromCatId($cat_id) {

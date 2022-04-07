@@ -1,5 +1,7 @@
 <?php
 
+include_once "../config.php";
+
 mysqli_report(MYSQLI_REPORT_ALL);
 
 /**
@@ -13,8 +15,9 @@ class DB {
     /**
      * Constructor class
      */
-    public function __construct($url, $db, $user, $pass) {
-        $conn = new mysqli($url, $user, $pass, $db);
+    public function __construct($url = null, $db = null, $user = null, $pass = null) {
+
+        $conn = new mysqli($url ?? $_SERVER["config"]["db_host"], $user ?? $_SERVER["config"]["db_username"], $pass ?? $_SERVER["config"]["db_password"], $db ?? $_SERVER["config"]["db_database"]);
 
         if ($conn->connect_error) {
             throw new RuntimeException("Connection failed: " . $conn->connect_error);
@@ -171,7 +174,7 @@ class DB {
     /**
      * Get columns from table and all thier content
      */
-    public function getColumns($table, $columns) {
+    public function getRowsByColumns($table, $columns) {
         foreach ($columns as $column) {
             if (!$this->columnExists($table,$column)) {
                 throw new RuntimeException("Column ${column} does not exist in ${table}");
