@@ -10,11 +10,12 @@ class Jobs {
     }
 
     private function getCats($with_id = false) {
-        return $this->db->getColumns('job_cats',$with_id ? ['id','name'] : ['name']);
+        return $this->db->getColumns('job_categories',$with_id ? ['id','name'] : ['name']);
     }
 
     private function getJobsFromCatId($cat_id) {
-        $r = $this->db->getConnection()->prepare("SELECT jobs.name FROM jobs INNER JOIN job_to_cat ON jobs.id=job_to_cat.job_id WHERE category_id=${cat_id};");
+        $r = $this->db->getConnection()->prepare("SELECT jobs.name FROM jobs WHERE category_id = ?;");
+        $r->bind_param($this->db->getCharType($cat_id), $cat_id);
         $r->execute();
         return $r->get_result()->fetch_all(MYSQLI_ASSOC);
     }

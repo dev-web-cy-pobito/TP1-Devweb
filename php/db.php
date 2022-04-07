@@ -39,7 +39,7 @@ class DB {
     /**
      * Generates mysqli bind_param character for one value
      */
-    protected function getCharType($value ) {
+    public function getCharType($value ) {
         if (strcmp(gettype($value), "integer") == 0) {
             return "i";
         } else if (strcmp(gettype($value), "double") == 0) {
@@ -52,7 +52,7 @@ class DB {
     /**
      * Generates mysqli bind_param character for array of values
      */
-    protected function getStrtype($values) {
+    public function getStrtype($values) {
         $strtype = "";
         foreach ($values as $value) {
             $strtype .= $this->getCharType($value);
@@ -143,7 +143,7 @@ class DB {
             $r = $this->con->prepare($sql);
 
             $r->bind_param($this->getStrtype(array_values($data)), ...array_values($data));
-            if ($id) {
+            if ($id != false) {
                 $r->bind_param($this->getCharType($id), $id);
             }
 
