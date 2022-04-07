@@ -1,6 +1,9 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
 <?php include_once '../partials/head.inc.php'; ?>
         <script src="assets/js/metiers.js"></script>

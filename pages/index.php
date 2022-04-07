@@ -3,8 +3,7 @@ session_start();
 ?>
 
 <!DOCTYPE html>
-    <html lang="en">
-
+<html lang="en">
     <head>
 <?php include_once '../partials/head.inc.php'; ?>
     </head>

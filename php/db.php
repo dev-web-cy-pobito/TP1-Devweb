@@ -32,7 +32,7 @@ class DB {
     /**
      * Returns connection object
      */
-    protected function getConnection() {
+    public function getConnection() {
         return $this->con;
     }
 
@@ -167,6 +167,18 @@ class DB {
         }
         return null;
     }
-}
 
-?>
+    /**
+     * Get columns from table and all thier content
+     */
+    public function getColumns($table, $columns) {
+        foreach ($columns as $column) {
+            if (!$this->columnExists($table,$column)) {
+                throw new RuntimeException("Column ${column} does not exist in ${table}");
+            }
+        }
+        $r = $this->con->prepare("select ". implode(", ", $columns) ." from ${table}");
+        $r->execute();
+        return $r->get_result()->fetch_all(MYSQLI_ASSOC);
+    }
+}

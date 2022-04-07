@@ -4,14 +4,11 @@ session_start();
 
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
 <?php include_once '../partials/head.inc.php'; ?>
 <script src="assets/js/puffles.js"></script>
     </head>
-
     <body>
-
         <div id="header" class="dark-bg">
             <img class="logo" src="assets/images/logo.png">
             <div class="title">
