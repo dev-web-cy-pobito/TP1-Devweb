@@ -7,4 +7,9 @@ $_SERVER["config"] = array(
     'db_database' => 'Puffles'
 );
 
+function send_json($o) {
+    header('Content-type: json/application');
+    echo json_encode($o);
+}
+
 ?>
