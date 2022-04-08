@@ -10,7 +10,7 @@ if (isset($_POST["email"]) && isset($_POST["password"]) && !isset($_SESSION["use
     $auth = new Auth(new DB());
     try {
         $u = $auth->register($_POST["email"] ?? "", $_POST["password"] ?? "");
-        send_json(["success" => "Account successfulyy created."]);
+        send_json(["success" => "Account successfuly created."]);
     } catch (Exception $e) {
         send_json(["error" => $e->getMessage()]);
     }
