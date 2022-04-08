@@ -16,11 +16,16 @@ class DB {
      * Constructor class
      */
     public function __construct($url = null, $db = null, $user = null, $pass = null) {
+        $url = $url ?? $_SERVER["config"]["db_host"];
+        $user = $user ?? $_SERVER["config"]["db_username"];
+        $pass = $pass ?? $_SERVER["config"]["db_password"];
+        $db = $db ?? $_SERVER["config"]["db_database"];
 
-        $conn = new mysqli($url ?? $_SERVER["config"]["db_host"], $user ?? $_SERVER["config"]["db_username"], $pass ?? $_SERVER["config"]["db_password"], $db ?? $_SERVER["config"]["db_database"]);
+
+        $conn = new mysqli($url, $user, $pass, $db);
 
         if ($conn->connect_error) {
-            throw new RuntimeException("Connection failed: " . $conn->connect_error);
+            throw new Error("Connection failed: " . $conn->connect_error);
             die("Connection failed: " . $conn->connect_error);
 
         } else {
@@ -81,7 +86,7 @@ class DB {
      * Whenever a table exists
      */
     private function tableExists($table) {
-        if (sizeof($this->tables) == 0) throw new RuntimeException("No tables found");
+        if (sizeof($this->tables) == 0) throw new Error("No tables found");
         return in_array($table, $this->tables);
     }
 
@@ -98,7 +103,7 @@ class DB {
                 return $a[0];
             }, $r);
         } else {
-            throw new RuntimeException("Table ${table} does not exist");
+            throw new Error("Table ${table} does not exist");
         }
     }
 
@@ -123,7 +128,7 @@ class DB {
             $r->execute();
             return $r->get_result()->fetch_all(MYSQLI_ASSOC);
         } else {
-            throw new RuntimeException("Table ${table} does not exist");
+            throw new Error("Table ${table} does not exist");
         }
         
     }
@@ -177,7 +182,7 @@ class DB {
     public function getRowsByColumns($table, $columns) {
         foreach ($columns as $column) {
             if (!$this->columnExists($table,$column)) {
-                throw new RuntimeException("Column ${column} does not exist in ${table}");
+                throw new Error("Column ${column} does not exist in ${table}");
             }
         }
         $r = $this->con->prepare("select ". implode(", ", $columns) ." from ${table}");
