@@ -6,7 +6,7 @@ session_start();
 <html lang="en">
     <head>
 <?php include_once '../partials/head.inc.php'; ?>
-        <script src="assets/js/metiers.js"></script>
+        <script src="assets/js/contact.js"></script>
     </head>
 
     <body>
@@ -38,7 +38,7 @@ session_start();
             <div id="main" class="column-right inline floating-container">
                 <h1>Contact</h1>
                 <div class="content">
-                    <form action="javascript:submit();">
+                    <form id="form" action="javascript:submit();">
                         <div class="contact-form">
                             <div class="col-half-left">
                                 <label>First name</label>
@@ -71,7 +71,7 @@ session_start();
                             </div>
                             <div class="col-full">
                                 <label>Your activity in France</label><br>
-                                <select id="jobs" required>
+                                <select name="activity" id="jobs" required>
                                     <option value disabled selected>Loading...</option>
                                 </select>
                             </div>

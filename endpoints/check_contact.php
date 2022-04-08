@@ -1,41 +1,40 @@
 <?php
 
 include_once '../php/forms.php';
+include_once '../php/db.php';
+include_once '../php/job.php';
 
-$jobs = array(
-    'cuisto',
-    'dev',
-);
+$job = (new Jobs(new DB()));
 
 $format = array(
-    'first_name' => array(),
-    'last_name' => array(),
-    'email' => array(
+    'first-name' => array(),
+    'last-name' => array(),
+    'mail' => array(
         'type' => 'email',
     ),
-    'birth' => array(
+    'date' => array(
         'type' => 'date',
     ),
     'gender' => array(
         'type' => 'preselection',
         'options' => array(
-            'male','female',
+            'm','f',
         ),
     ),
     'activity' => array(
-        'type' => 'preselection',
-        'options' => $jobs,
+        'type' => 'integer',
+        'options' => array()
     ),
     'subject' => array(),
     'message' => array(),
 );
 
 try {
-    echo json_encode(validateObject($_POST, $format));
+    if (json_encode(validateObject($_POST, $format)) && $job->jobExists($_POST["activity"])) {
+        send_json(["redirect" => "mailto:spam@palmes.dev?subject=" . $_POST["subject"] . "&body=" . $_POST["message"]]);
+    }
 } catch (Exception $e) {
-    if ($e->getCode() == 1) {
-        echo $e->getMessage();
-    };
+    send_json(["error" => $e->getMessage()]);
     
 }
 
