@@ -51,6 +51,7 @@ create table if not exists categories(
     -- Category name
     name varchar(64) not null,
 
+    unique(name),
     primary key (id)
 );
 
