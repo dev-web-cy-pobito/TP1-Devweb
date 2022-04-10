@@ -36,7 +36,7 @@ session_start();
                 <h4 class="box-title">Categories</h4>
                 <nav class="v-menu">
                     <ul id="categories-submenu">
-                        <li><a href="javascript:chooseFilter(data.categories)">All of our Puffles</a></li>
+                        <li><a href="javascript:chooseFilter(data.categories.map(i => {return i.id.toString();}))">All of our Puffles</a></li>
                     </ul>
                 </nav>
             </div>
@@ -46,7 +46,7 @@ session_start();
                 
                     <div class="col-full">
                         <label>Search</label>
-                        <input id="search" oninput="search()" type="text">
+                        <input id="search" oninput="searchTxt()" type="text">
                         <div id="categories" class="inline">
                             <!-- To be generated -->
                         </div>
