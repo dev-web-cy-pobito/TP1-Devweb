@@ -300,7 +300,7 @@
         "date": "November 2015"
     },
     {
-        "categories": [],
+        "categories": ["Other"],
         "pic_url": "assets/images/ffaCatnewartwork.png",
         "name": "Purple Turkish Van Cat",
         "description": "A drawing of it was discovered in the Doodle Dimension at the April Fools' Party 2012. A real one is in the video Puffle Trouble among a crowd of puffles. A picture of it could be seen in Jangrah's igloo in the Club Penguin: Monster Beach Party TV special.",
@@ -309,7 +309,7 @@
         "price": null
     },
     {
-        "categories": [],
+        "categories": ["Other"],
         "pic_url": "assets/images/88fBat_Puffle_2013.png",
         "name": "Bat",
         "description": "One was seen through the Mansion Attic telescope of the Halloween Party 2012. Featured on the Puffle Bat Key Pin, the Puffle Bat Tee and the Halloween Tee. Members could turn into one during Halloween Parties 2013 and 2016 by dancing as a vampire.",
@@ -318,7 +318,7 @@
         "price": null
     },
     {
-        "categories": [],
+        "categories": ["Other"],
         "pic_url": "assets/images/33eReindeer_Puffle_laughing.png",
         "name": "Reindeer",
         "description": "Members could transform into one during the Holiday Party 2012 by eating its magic cookie. Featured on the Holiday Cookies Pin as a cookie, and on the Reindeer Puffle Sweater as a silhouette. A decoration featuring a red-nosed reindeer puffle could be seen at the Dock during the Holiday Party 2013. Two real ones appear on the Puffle Wild loading screen. They are slightly larger than ordinary puffles.",
@@ -327,7 +327,7 @@
         "price": null
     },
     {
-        "categories": [],
+        "categories": ["Other"],
         "pic_url": "assets/images/994Green_Puffle_Dragon.png",
         "name": "Dragon",
         "description": "Rumored due to an appearance in a foreign Club Penguin Magazine issue. Members could transform into the green and blue variants during the Medieval Party 2013 by using their respective potion.",
@@ -336,7 +336,7 @@
         "price": null
     },
     {
-        "categories": [],
+        "categories": ["Other"],
         "pic_url": "assets/images/990Unicorn_Puffle_artwork.png",
         "name": "Unicorn",
         "description": "Members could transform into the white and black variants during the Medieval Party 2013 by using their respective potion. The yellow variant was Adoptable.",
@@ -345,7 +345,7 @@
         "price": null
     },
     {
-        "categories": [],
+        "categories": ["Other"],
         "pic_url": "assets/images/115Chicken_Puffle_Artwork.png",
         "name": "Chicken",
         "description": "Members were able to transform into one during the Medieval Party 2013 when failing a potion recipe. During the Muppets World Tour, penguins who joined a member's Salad Tongs act became a chicken puffle until the act ended. It has its own official music video.",

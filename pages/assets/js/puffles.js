@@ -22,16 +22,8 @@ function chooseSort(t) {
 function chooseFilter(f) {
     console.log(f);
 
-    // let r = new Set();
-    // let t = [];
-
-    // f.forEach(c => {
-    //     if (data.categories.includes(c)) r.add(c);
-    // });
-
     t = [...document.getElementsByTagName("input")].map(i => i.checked = f.includes(i.id));
 
-    // data.filter.categories = [...r];
     data.puffles = [];
     let r = new XMLHttpRequest();
     r.open("POST", "../endpoints/getPuffles.php");
@@ -148,7 +140,6 @@ function populateCatList(el) {
     let e = document.getElementById(el);
     e.innerHTML = "";
     data.categories.forEach(c => {
-        console.log(c);
         e.innerHTML += `
         <div>
             <input onclick="search()" type="checkbox" name="${c.name}" id="${c.id}" checked>
@@ -172,17 +163,4 @@ window.onload = () => {
             search()
         }
     }
-    console.log(data);
-    // data.puffles.forEach(p => {
-    //     if (p.categories.length == 0) p.categories.push("Other");
-
-    //     p.categories.forEach(c => {
-    //         categories.add(c);
-    //     });
-    // });
-    // data.categories = [...categories];
-    // data.filter.categories = [...categories];
-
-    // populateTable("shop");
-    // populateMenu("categories-submenu");
 }
