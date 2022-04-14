@@ -306,7 +306,6 @@ img.shop {
 
 #shop tr>td {
     padding: 10px;
-    text-align: justify;
 }
 
 #shop>tbody:nth-child(even) {
