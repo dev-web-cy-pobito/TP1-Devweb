@@ -13,12 +13,13 @@ function register() {
 function request(email, password, type) {
     let info = document.getElementById("info");
     let r = new XMLLHttpRequest(type);
+    let data = new FormData();
+
+    data.append("email", email.value);
+    data.append("password", password.value);
 
     r.open("POST", "endpoints/" + type + ".php", true);
-    r.send(JSON.stringify({
-        email: email,
-        password: password
-    }));
+    r.send(data);
 
     r.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
