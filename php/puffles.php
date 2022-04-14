@@ -18,12 +18,9 @@ class Puffles {
     }
 
     public function getPufflesFromCatsId($cats_id) {
-        $r = $this->db->getConnection()->prepare("SELECT puffles.* FROM puffles
-        INNER JOIN categorized_puffles 
-        ON puffles.id=categorized_puffles.puffle_id
-        
-        "  . (empty($cats_id) ? "" : "WHERE category_id=" . implode(" OR category_id=", $cats_id)). "
-        GROUP BY puffle_id;");
+        $sql = "SELECT puffles.* FROM puffles INNER JOIN categorized_puffles ON puffles.id=categorized_puffles.puffle_id"  . (empty($cats_id) ? "" : " WHERE category_id=" . implode(" OR category_id=", array_map(function(){return "?";}, $cats_id))). " GROUP BY puffle_id;";
+        $r = $this->db->getConnection()->prepare($sql);
+        $r->bind_param(str_repeat("s", sizeof($cats_id)), ...$cats_id);
         $r->execute();
         return $r->get_result()->fetch_all(MYSQLI_ASSOC);
     }
