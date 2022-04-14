@@ -27,7 +27,7 @@ create table if not exists puffles (
     name varchar(64) not null,
 
     -- Puffle description
-    description varchar(1024),
+    description varchar(2048),
 
     -- Whenever it first appeared
     apparition_date varchar(255) not null,

@@ -8,5 +8,5 @@ drop table if exists categories;
 drop table if exists puffles;
 drop table if exists users;
 drop table if exists jobs;
-drop table if exists job_categoriess;
+drop table if exists job_categories;
 drop database Puffles;
