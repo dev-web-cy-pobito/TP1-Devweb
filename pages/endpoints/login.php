@@ -1,7 +1,7 @@
 <?php
 
-include_once "../php/db.php";
-include_once "../php/auth.php";
+include_once "../../php/db.php";
+include_once "../../php/auth.php";
 
 session_start();
 

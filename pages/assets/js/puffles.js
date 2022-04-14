@@ -26,7 +26,7 @@ function chooseFilter(f) {
 
     data.puffles = [];
     let r = new XMLHttpRequest();
-    r.open("POST", "../endpoints/getPuffles.php");
+    r.open("POST", "endpoints/getPuffles.php");
     r.setRequestHeader("Content-type", "application/json")
     r.send(JSON.stringify(f));
     r.onreadystatechange = function() {
@@ -152,7 +152,7 @@ window.onload = () => {
     let categories = new Set();
 
     let r = new XMLHttpRequest();
-    r.open("GET", "../endpoints/getPufflesCats.php");
+    r.open("GET", "endpoints/getPufflesCats.php");
     r.send();
     r.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {

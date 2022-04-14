@@ -2,7 +2,7 @@ window.onload = () => {
     let r = new XMLHttpRequest();
     let e = document.getElementById("jobs");
     // Merci pôle emploi pour la liste de métiers
-    r.open("GET", "../endpoints/getJobsList.php");
+    r.open("GET", "endpoints/getJobsList.php");
     r.send();
     r.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -35,7 +35,7 @@ function submit() {
     p.append("date", d/1000);
 
     let r = new XMLHttpRequest();
-    r.open("POST", "../endpoints/checkContact.php");
+    r.open("POST", "endpoints/checkContact.php");
     r.send(p);
     r.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {

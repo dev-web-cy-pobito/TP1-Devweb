@@ -1,6 +1,6 @@
 <?php
-include_once "../config.php";
-include_once "../php/puffles.php";
+
+include_once "../../php/puffles.php";
 
 $jobs = new Puffles(new DB($_CONFIG['db_host'],'Puffles', $_CONFIG['db_username'],$_CONFIG['db_password']));
 

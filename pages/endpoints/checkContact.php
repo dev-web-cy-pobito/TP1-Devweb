@@ -1,8 +1,8 @@
 <?php
 
-include_once '../php/forms.php';
-include_once '../php/db.php';
-include_once '../php/job.php';
+include_once '../../php/forms.php';
+include_once '../../php/db.php';
+include_once '../../php/job.php';
 
 $job = (new Jobs(new DB()));
 

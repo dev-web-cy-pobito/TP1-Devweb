@@ -1,6 +1,6 @@
 <?php
 
-include_once "../config.php";
+include_once "config.php";
 
 mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
 
