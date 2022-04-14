@@ -2,7 +2,7 @@
 
 include_once "../config.php";
 
-mysqli_report(MYSQLI_REPORT_ALL);
+mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
 
 /**
  * Database class
