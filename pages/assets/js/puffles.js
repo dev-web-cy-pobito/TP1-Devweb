@@ -20,7 +20,6 @@ function chooseSort(t) {
 }
 
 function chooseFilter(f) {
-    console.log(f);
 
     t = [...document.getElementsByTagName("input")].map(i => i.checked = f.includes(i.id));
 
