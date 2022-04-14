@@ -35,7 +35,7 @@ function submit() {
     p.append("date", d/1000);
 
     let r = new XMLHttpRequest();
-    r.open("POST", "../endpoints/check_contact.php");
+    r.open("POST", "../endpoints/checkContact.php");
     r.send(p);
     r.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
