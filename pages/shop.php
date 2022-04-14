@@ -9,30 +9,11 @@ session_start();
 <script src="assets/js/puffles.js"></script>
     </head>
     <body>
-        <div id="header" class="dark-bg">
-            <img class="logo" src="assets/images/logo.png">
-            <div class="title">
-                <h1 class="title">Puffles</h1>
-            </div>
-            <nav class="h-menu">
-                <ul>
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="shop.php">Shop</a></li>
-                    <li><a href="contact.php">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+        <?php include_once '../partials/navbar.inc.php'; ?>
 
         <div id="vertical-center">
             <div id="menu" class="column-left inline vl">
-                <h1 class="box-title">Menu</h1>
-                <nav class="v-menu">
-                    <ul>
-                        <li><a href="index.php">Home</a></li>
-                        <li><a href="shop.php">Shop</a></li>
-                        <li><a href="contact.php">Contact</a></li>
-                    </ul>
-                </nav>
+                <?php include_once '../partials/menu.inc.php'; ?>
                 <h4 class="box-title">Categories</h4>
                 <nav class="v-menu">
                     <ul id="categories-submenu">

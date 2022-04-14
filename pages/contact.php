@@ -10,30 +10,11 @@ session_start();
     </head>
 
     <body>
-        <div id="header" class="dark-bg">
-            <img class="logo" src="assets/images/logo.png">
-            <div class="title">
-                <h1 class="title">Contact us</h1>
-            </div>
-            <nav class="h-menu">
-                <ul>
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="shop.php">Shop</a></li>
-                    <li><a href="contact.php">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+<?php include_once '../partials/navbar.inc.php'; ?>
 
         <div id="vertical-center">
             <div id="menu" class="column-left inline vl">
-                <h1 class="box-title">Menu</h1>
-                <nav class="v-menu">
-                    <ul>
-                        <li><a href="index.php">Home</a></li>
-                        <li><a href="shop.php">Shop</a></li>
-                        <li><a href="contact.php">Contact</a></li>
-                    </ul>
-                </nav>
+                <?php include_once '../partials/menu.inc.php'; ?>
             </div>
             <div id="main" class="column-right inline floating-container">
                 <h1>Contact</h1>
