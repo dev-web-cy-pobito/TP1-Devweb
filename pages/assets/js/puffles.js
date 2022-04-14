@@ -117,7 +117,7 @@ function populateTable(el) {
         <td class="puff-price"><span>${p.price ?? ""}</span></td>
         <td>${p.description}</td>
         <td>${p.apparition_date}</td>
-        <td class="puff-cart" max=${p.stock}><button onclick="removeCart(this)">-</button>0<button onclick="addCart(this)">+</button></td>
+        <td class="puff-cart" max=${p.stock}>0<button onclick="addCart(this)">+</button></td>
         <td class="puff-stock"><span onclick='javascript:this.innerText = ${p.stock ?? "Indisponible"}'>Vérifier</span></td>
     </tr>`
     });
