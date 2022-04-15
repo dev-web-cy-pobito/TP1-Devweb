@@ -43,6 +43,8 @@ function submit() {
             if (j["error"]) {
                 alert(j.error ?? "An unknown exception occured.");
             } else if (j["redirect"]) {
+
+                // We don't have a mail server, therefore send it yourself (don't worry, the contact data was still validated by the server)
                 window.location.href = j["redirect"];
             }
         }
