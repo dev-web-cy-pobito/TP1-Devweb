@@ -12,7 +12,7 @@ function register() {
 
 function request(email, password, type) {
     let info = document.getElementById("info");
-    let r = new XMLLHttpRequest(type);
+    let r = new XMLHttpRequest(type);
     let data = new FormData();
 
     data.append("email", email.value);
@@ -24,7 +24,22 @@ function request(email, password, type) {
     r.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             let j = JSON.parse(this.responseText);
-            r.innerText = j.error ? j.error : j.success;
+            if (j.error) {
+                info.innerText = j.error;
+                info.classList.add('warning-box');
+                info.classList.remove('hidden');
+                info.scrollIntoView();
+            } else {
+                if (type === "register") {
+                    document.getElementById('register').classList.add('hidden')
+                    document.getElementById('login').scrollIntoView();
+                    info.innerText = "Successfully Registered"
+                    info.classList.add('success-box');
+                    info.classList.remove('hidden');
+                } else if (type === "login") {
+                    window.location.href = "index.php";
+                }
+            }
         }
     }
 }

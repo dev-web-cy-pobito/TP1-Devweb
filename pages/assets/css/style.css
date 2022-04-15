@@ -16,6 +16,12 @@
     --higher-bg: #30363d;
     --higher-border-color: #444c56;
     --higher-text-color: #ffffff;
+
+    --warning-border: #b91c1c;
+    --warning-backgroung: #7f1d1d73;
+
+    --success-border: #15803d;
+    --success-backgroung: #14532d73;
 }
 
 @media (prefers-color-scheme: light) {
@@ -37,6 +43,12 @@
         --higher-bg: #eeeeee;
         --higher-border-color: #d0d7de;
         --higher-text-color: #171b1f;
+
+        --warning-border: #b91c1c;
+        --warning-backgroung: #7f1d1d73;
+
+        --success-border: #15803d;
+        --success-backgroung: #14532d73;
     }
 }
 
@@ -149,6 +161,28 @@ p.footer {
     padding-left: 10px;
     color: var(--high-text-color);
     background-color: var(--high-bg);
+}
+
+.warning-box {
+    margin: 4px;
+    padding: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 6px;
+    border-color: var(--warning-border);
+    background-color: var(--warning-backgroung);
+    opacity: 80%;
+}
+
+.success-box {
+    margin: 4px;
+    padding: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 6px;
+    border-color: var(--success-border);
+    background-color: var(--success-backgroung);
+    opacity: 80%;
 }
 
 .boxed {
@@ -264,6 +298,25 @@ button {
     width: fit-content;
 }
 
+.button {
+    color: inherit;
+    font-weight: bold;
+    border: 1px solid var(--high-border-color);
+    padding: 10px;
+    border-radius: 4px;
+    background-color: var(--high-bg);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}
+
+.button:hover {
+    color: var(--higher-text-color);
+    background-color: var(--higher-bg);
+    border-color: var(--high-border-color);
+}
+
 button:hover {
     color: var(--higher-text-color);
     background-color: var(--higher-bg);
@@ -332,7 +385,7 @@ img.shop {
     margin-bottom: 0px;
 }
 
-.puff-price > span {
+.puff-price>span {
     font-weight: bold;
     display: block;
     text-align: center;
@@ -363,4 +416,8 @@ input:invalid {
 
 .clickable {
     cursor: pointer;
+}
+
+.hidden {
+    visibility: hidden;
 }

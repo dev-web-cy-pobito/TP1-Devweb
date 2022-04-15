@@ -24,7 +24,6 @@ class Puffles {
         $r->execute();
         return $r->get_result()->fetch_all(MYSQLI_ASSOC);
     }
-
     public function getOrgJobs(){
         $cats = $this->getCats(true);
         foreach ($cats as &$cat) {
