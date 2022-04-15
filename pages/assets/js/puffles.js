@@ -93,8 +93,8 @@ function populateTable(el) {
     el.innerHTML = `
     <tr>
         <th>Image</th>
-        <th onclick="chooseSort('name')">Name</th>
-        <th onclick="chooseSort('price')">Price</th>
+        <th class="clickable" onclick="chooseSort('name')">Name</th>
+        <th class="clickable" onclick="chooseSort('price')">Price</th>
         <th>Description</th>
         <th>Apparition Date</th>
         <th>Acheter</th>

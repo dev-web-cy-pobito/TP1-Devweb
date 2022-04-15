@@ -31,6 +31,9 @@ $format = array(
 
 try {
     if (json_encode(validateObject($_POST, $format)) && $job->jobExists($_POST["activity"])) {
+
+        // We don't have a mail server, therefore send it yourself (don't worry, the contact data was still validated by the server)
+
         send_json(["redirect" => "mailto:spam@palmes.dev?subject=" . $_POST["subject"] . "&body=" . $_POST["message"]]);
     }
 } catch (Exception $e) {

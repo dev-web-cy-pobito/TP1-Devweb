@@ -332,9 +332,7 @@ img.shop {
     margin-bottom: 0px;
 }
 
-.puff-price {}
-
-.puff-price>span {
+.puff-price > span {
     font-weight: bold;
     display: block;
     text-align: center;
@@ -361,4 +359,8 @@ img.shop {
 
 input:invalid {
     color: red;
+}
+
+.clickable {
+    cursor: pointer;
 }
