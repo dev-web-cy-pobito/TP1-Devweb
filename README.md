@@ -1,10 +1,10 @@
-# TP1-Devweb - Moldovan Alexandru & Rodrigues Samuel
+# Devweb - Moldovan Alexandru & Rodrigues Samuel
 
-Projet devweb 1
+Projet devweb
 
 Live version : https://alex.by-cy.tech/
 
-# Not associated with Disney 
+## Initialization
 
 MySQL connection settings can be edited in `php/config.php`
 
@@ -17,7 +17,9 @@ Alternative filling solution is using `php/fill_db.php`, but requires special we
 Webserver is to be mounted in the `pages` folder.
 Due to lack of SMTP servers, the contact form does check user input but sends it back to the user so he can send it himself instead.
 
-Passwords must contain one capital.
+Passwords must contain one capital (ex. Paris, London...).
+
+# Not associated with Disney
 
 > all Puffle Data & images are provided by the Club Penguin Fandom Wiki. Credit due to the original authors
 > https://clubpenguin.fandom.com/wiki/Puffle
