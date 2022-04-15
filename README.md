@@ -2,7 +2,22 @@
 
 Projet devweb 1
 
+Live version : https://alex.by-cy.tech/
+
 # Not associated with Disney 
+
+MySQL connection settings can be edited in `php/config.php`
+
+To create an empty database, you can source `mysql/init.sql`
+To create a ready-to-go database, you can source `mysql/populate.sql`
+To delete all data, you can source `mysql/drop.sql`
+
+Alternative filling solution is using `php/fill_db.php`, but requires special web server mounting;
+
+Webserver is to be mounted in the `pages` folder.
+Due to lack of SMTP servers, the contact form does check user input but sends it back to the user so he can send it himself instead.
+
+Passwords must contain one capital.
 
 > all Puffle Data & images are provided by the Club Penguin Fandom Wiki. Credit due to the original authors
 > https://clubpenguin.fandom.com/wiki/Puffle
