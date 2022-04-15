@@ -42,7 +42,7 @@ class Auth {
         }
 
         if (!$this->checkPasswordFormat($password)) {
-            throw new Exception("Password must contain at least one capital.");
+            throw new Exception("Password must contain at least one capital. (ex: Paris)");
         }
 
         if ($this->getUser($email) != false) {

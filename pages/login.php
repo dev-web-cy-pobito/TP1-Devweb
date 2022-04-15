@@ -24,7 +24,7 @@ session_start();
                 <div id="login">
                     <h1 >Login</h1>
                     <div class="content">
-                        <form id="form" action="javascript:login();">
+                        <form action="javascript:login();">
                             <div class="contact-form">
                                 <div class="col-full">
                                     <label>Email Address</label>
@@ -45,7 +45,7 @@ session_start();
                 <div id="register">
                     <h1>Register</h1>
                     <div class="content">
-                        <form id="form" action="javascript:register();">
+                        <form action="javascript:register();">
                             <div class="contact-form">
                                 <div class="col-full">
                                     <label>Email Address</label>

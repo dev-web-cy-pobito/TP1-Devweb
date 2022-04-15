@@ -12,7 +12,7 @@ if (isset($_POST["email"]) && isset($_POST["password"]) && !isset($_SESSION["use
         $u = $auth->login($_POST["email"] ?? "", $_POST["password"] ?? "");
         if ($u != false) {
             $_SESSION["user"] = $u;
-            header('Location: /');
+            send_json(["success" => true]);
         }
     } catch (Exception $e) {
         send_json(["error" => $e->getMessage()]);
