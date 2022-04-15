@@ -138,7 +138,12 @@ class DB {
 
         $d = array_keys($data);
 
-        // TODO:  check data
+        foreach ($d as $key) {
+            if (!in_array($key, $columns)) {
+                throw new Error("Column ${key} does not exist in table ${table}");
+            }
+        }
+        
         return true;
     }
 
