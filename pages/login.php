@@ -20,42 +20,47 @@ session_start();
             <div id="main" class="column-right inline floating-container">
                 <div class="hidden" id="info"></div>    
             <?php if (!isset($_SESSION['user'])) { ?>
-                <h1 id="login" >Login</h1>
-                <div class="content">
-                    <form id="form" action="javascript:login();">
-                        <div class="contact-form">
-                            <div class="col-full">
-                                <label>Email Address</label>
-                                <input id="login_email" name="login_email" placeholder="example@domain.com" type="email" required>
-                            </div>
-                            <div class="col-full">
-                                <label>Password</label>
-                                <input id="login_password" name="login_password" placeholder="password" type="password" required>
-                            </div>
-                            <div class="col-full">
-                                <button type="submit">Login</button> 
-                            </div>
+                
+                <div id="login">
+                    <h1 >Login</h1>
+                    <div class="content">
+                        <form id="form" action="javascript:login();">
+                            <div class="contact-form">
+                                <div class="col-full">
+                                    <label>Email Address</label>
+                                    <input id="login_email" name="login_email" placeholder="example@domain.com" type="email" required>
+                                </div>
+                                <div class="col-full">
+                                    <label>Password</label>
+                                    <input id="login_password" name="login_password" placeholder="password" type="password" required>
+                                </div>
+                                <div class="col-full">
+                                    <button type="submit">Login</button> 
+                                </div>
 
-                        </div>
-                    </form>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <h1 id="register">Register</h1>
-                <div class="content">
-                    <form id="form" action="javascript:register();">
-                        <div class="contact-form">
-                            <div class="col-full">
-                                <label>Email Address</label>
-                                <input id="register_email" name="register_email" placeholder="example@domain.com" type="email" required>
+                <div id="register">
+                    <h1>Register</h1>
+                    <div class="content">
+                        <form id="form" action="javascript:register();">
+                            <div class="contact-form">
+                                <div class="col-full">
+                                    <label>Email Address</label>
+                                    <input id="register_email" name="register_email" placeholder="example@domain.com" type="email" required>
+                                </div>
+                                <div class="col-full">
+                                    <label>Password</label>
+                                    <input id="register_password" name="register_password" placeholder="password" type="password" required>
+                                </div>
+                                <div class="col-half">
+                                <button type="submit">Register</button>
+                                </div>
                             </div>
-                            <div class="col-full">
-                                <label>Password</label>
-                                <input id="register_password" name="register_password" placeholder="password" type="password" required>
-                            </div>
-                            <div class="col-half">
-                            <button type="submit">Register</button>
-                            </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
                 <?php } else { ?>
                 <h1>My Account</h1>

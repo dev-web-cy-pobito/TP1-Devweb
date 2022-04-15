@@ -32,7 +32,7 @@ function request(email, password, type) {
             } else {
                 if (type === "register") {
                     document.getElementById('register').classList.add('hidden')
-                    document.getElementById('login').scrollIntoView();
+                    info.scrollIntoView();
                     info.innerText = "Successfully Registered"
                     info.classList.add('success-box');
                     info.classList.remove('hidden');
