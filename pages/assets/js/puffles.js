@@ -11,6 +11,19 @@ const data = {
     }
 };
 
+function calculateStock(id) {
+    let stock = data.puffles.filter(p => p.id === id);
+    stock = stock.length > 0 ? stock[0].stock : 0;
+    let carted = cart.filter(p => p.id === id);
+    stock -= carted.length > 0 ? carted[0].quantity : 0;
+    return stock;
+}
+
+function getPuffle(id) {
+    let p = data.puffles.filter(e => e.id === id);
+    return (p.length > 0 ? p[0] : null);
+}
+
 function chooseSort(t) {
 
     if (t === data.sort.by) data.sort.ascendant ^= true;
@@ -66,21 +79,23 @@ function puffleSort(p1, p2) {
 
 function addCart(a) {
     let max = parseInt(a.parentElement.getAttribute("max"));
-    let i = parseInt(a.parentElement.innerText.replace("+", "").replace("-", "").replace("\n", ""));
+    let pid = parseInt(a.parentElement.getAttribute("pid"));
+    let i = parseInt(a.parentElement.innerText.replace("+", "").replace("-", "").replace("\n", "")) | 0;
     if (i + 1 < max) {
-        a.parentElement.innerHTML = `<button onclick="removeCart(this)">-</button>${i+1}<button onclick="addCart(this)">+</button>`;
+        a.parentElement.innerHTML = `<button onclick="removeCart(this)">-</button>${i+1}<button onclick="addCart(this)">+</button><button onclick="addItemToCart(getPuffle(${pid}), ${i+1})">Add to cart</button>`;
     } else {
-        a.parentElement.innerHTML = `<button onclick="removeCart(this)">-</button>${i+1}`;
+        a.parentElement.innerHTML = `<button onclick="removeCart(this)">-</button>${i+1}<button onclick="addItemToCart(getPuffle(${pid}), ${i+1})">Add to cart</button>`;
     }
 }
 
 function removeCart(a) {
-    let i = parseInt(a.parentElement.innerText.replace("+", "").replace("-", "").replace("\n", ""));
+    let i = parseInt(a.parentElement.innerText.replace("+", "").replace("-", "").replace("\n", "")) | 0;
+    let pid = parseInt(a.parentElement.getAttribute("pid"));
 
     if (i - 1 > 0) {
-        a.parentElement.innerHTML = `<button onclick="removeCart(this)">-</button>${i-1}<button onclick="addCart(this)">+</button>`;
+        a.parentElement.innerHTML = `<button onclick="removeCart(this)">-</button>${i-1}<button onclick="addCart(this)">+</button><button onclick="addItemToCart(getPuffle(${pid}), ${i-1})">Add to cart</button>`;
     } else {
-        a.parentElement.innerHTML = `${i - 1}<button onclick="addCart(this)">+</button>`;
+        a.parentElement.innerHTML = `<button onclick="addCart(this)">+</button>`;
 
     }
 }
@@ -107,8 +122,8 @@ function populateTable(el) {
     <tr>
         <td>
             <div class="imgZoom">
-                <input type="checkbox" id="zoom${p.name}">
-                <label for="zoom${p.name}">
+                <input type="checkbox" id="zoom${p.id}">
+                <label for="zoom${p.id}">
                     <img class="shop" src="${p.pic_url}">
                 </label>
             </div>
@@ -117,8 +132,8 @@ function populateTable(el) {
         <td class="puff-price"><span>${p.price ?? ""}</span></td>
         <td>${p.description}</td>
         <td>${p.apparition_date}</td>
-        <td class="puff-cart" max=${p.stock}>0<button onclick="addCart(this)">+</button></td>
-        <td class="puff-stock"><span onclick='javascript:this.innerText = ${p.stock ?? "Indisponible"}'>Vérifier</span></td>
+        <td class="puff-cart" max=${calculateStock(p.id)} pid=${p.id}>${calculateStock(p.id) ? '<button onclick="addCart(this)">+</button>' : ""}</td>
+        <td class="puff-stock">${calculateStock(p.id) ?? "`Indisponible`"}</td>
     </tr>`
     });
 }
@@ -147,7 +162,9 @@ function populateCatList(el) {
     })
 }
 
-window.onload = () => {
+(async () => {
+
+    await getCart();
     let categories = new Set();
 
     let r = new XMLHttpRequest();
@@ -162,4 +179,4 @@ window.onload = () => {
             search()
         }
     }
-}
+})()

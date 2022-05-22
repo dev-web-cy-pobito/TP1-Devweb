@@ -8,6 +8,15 @@
                 <ul>
                     <li><a href="index.php">Home</a></li>
                     <li><a href="shop.php">Shop</a></li>
+                    <li>
+                        <a id="cart" href="#">Cart</a>
+                        <div id="cart-modal" class="cartModal" hidden>
+                            <h3>Your Cart</h3>
+                            <div id="cart-content">
+                                <!-- To be generated -->
+                            </div>
+                        </div>
+                    </li>
                     <li><a href="contact.php">Contact</a></li>
                 <?php if (!isset($_SESSION['user'])) { ?> 
                     <li><a class="button" href="login.php">Login</a></li>
