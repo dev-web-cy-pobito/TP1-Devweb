@@ -31,12 +31,7 @@ function updateModal() {
         return `
         <tr>
             <td>
-                <div class="imgZoom">
-                    <input type="checkbox" id="zoom${p.id}">
-                    <label for="zoom${p.id}">
-                        <img class="shop" src="${p.pic_url}">
-                    </label>
-                </div>
+                <img class="shop" src="${p.pic_url}">
             </td>
             <td>${p.name}</td>
             <td class="puff-price"><span>${p.price ?? "-"}</span></td>
